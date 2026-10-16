@@ -14,9 +14,10 @@ Checkout usado em todos os CTAs: `https://lastlink.com/p/CF4E6DF14/checkout-paym
 | Repositório | github.com/Andersonx2/Metodo-7-dias-acolhimento, branch `main` |
 | Deploy | Vercel, projeto `metodo-7-dias-acolhimento`, produção automática a cada push na `main` |
 | Container GTM | GTM-TKW5TWQT, conta FreedomPulse, versão 2 publicada |
-| Pixel Meta | 1830931954135863 (dataset ebookFreedom), instalado direto no código da página |
+| Pixel Meta | 1830931954135863 (dataset ebookFreedom), disparado pelo GTM |
 | Checkout | https://lastlink.com/p/CF4E6DF14/checkout-payment/ |
-| Venda liberada | Não. Depende do envio de documentos na Lastlink. |
+| Order bump | Ativo na oferta do Método: ebook por R$37, produto `Atendimento Estrategico para Psicologas e Psicologos` |
+| Venda liberada | Não. Depende do envio de documentos na Lastlink e da carteira vinculada nos dois produtos. |
 
 Para atualizar a página, edite o `index.html` e faça push na `main`. O Vercel republica sozinho.
 
@@ -73,16 +74,22 @@ window.M7D = {
 };
 ```
 
-O que já foi configurado no GTM:
+O que está configurado no GTM, container GTM-TKW5TWQT, versão 4 publicada:
 
-- Variável `dlv - profundidade`, lendo a chave `profundidade` da camada de dados
-- Acionador `Scroll 75 por cento`, evento personalizado `scroll_pagina` com filtro profundidade igual a 75
-- Tag `Meta - ScrollProfundo75`, HTML personalizado disparando `fbq('trackCustom','ScrollProfundo75')`
-- Versão 2 publicada
+| Item | Tipo | Dispara em |
+| :-- | :-- | :-- |
+| Meta - Pixel base e ViewContent | HTML personalizado | All Pages |
+| Meta - InitiateCheckout | HTML personalizado | Evento `inicio_checkout` |
+| Meta - ScrollProfundo75 | HTML personalizado | Evento `scroll_pagina` com profundidade igual a 75 |
+| Inicio de checkout | Acionador | Evento personalizado `inicio_checkout` |
+| Scroll 75 por cento | Acionador | Evento personalizado `scroll_pagina` |
+| dlv - profundidade | Variável | Chave `profundidade` da camada de dados |
 
-Esse evento personalizado serve para montar público de remarketing de quem leu até o fim da página.
+Toda a camada do Meta vive no GTM. O `index.html` não carrega `fbevents.js` e não dispara nenhum evento de pixel, ele apenas alimenta a camada de dados. Para trocar de pixel, mude a tag no GTM e publique, sem tocar no código.
 
-O pixel base, o PageView, o ViewContent e o InitiateCheckout ficam no código da página, não no GTM. Isso garante o disparo no momento certo do carregamento e evita evento duplicado. O GTM fica livre para GA4 e qualquer tag nova.
+Consequência a considerar: quem usa bloqueador que derruba o googletagmanager.com perde o pixel inteiro, já que ele passa a depender do container. Esse é o custo de centralizar tudo no GTM.
+
+O evento ScrollProfundo75 serve para montar público de remarketing de quem leu até o fim da página.
 
 ### Eventos já implementados no dataLayer
 
@@ -116,11 +123,13 @@ O `Purchase` precisa vir da Lastlink, porque a compra acontece no domínio dela.
 
 Você já tem o ativo pronto para o bump: o ebook **Atendimento Estratégico para Psicólogas(os)** que está no seu Drive. Ele complementa o método sem canibalizar a oferta principal.
 
-Sugestão de configuração em Produto → Ofertas → Order Bump:
+Já configurado:
 
-- Nome: Scripts Completos de Atendimento
-- Preço: R$ 37
-- Chamada no checkout: "Adicione os scripts completos de triagem, proposta e follow-up, prontos para copiar e colar."
+- Produto: `Atendimento Estrategico para Psicologas e Psicologos`, com o PDF de 17 páginas anexado
+- Oferta: `Scripts Completos de Atendimento`, pagamento único de R$ 37,00
+- Order bump na oferta do Método: título "Leve junto o guia completo de atendimento", CTA "Quero os scripts tambem", status ativo
+
+Falta vincular a carteira de recebimento no produto do bump, o que só você pode fazer.
 
 Com 30% de adesão, o ticket médio sobe de R$147 para cerca de R$158. São 5 vendas a menos para chegar nos R$10k.
 
