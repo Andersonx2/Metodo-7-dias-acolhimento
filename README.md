@@ -6,6 +6,22 @@ Checkout usado em todos os CTAs: `https://lastlink.com/p/CF4E6DF14/checkout-paym
 
 ---
 
+## 0. Estado atual (publicado em 15/10/2026)
+
+| Item | Estado |
+| :-- | :-- |
+| Página no ar | https://metodo-7-dias-acolhimento.vercel.app |
+| Repositório | github.com/Andersonx2/Metodo-7-dias-acolhimento, branch `main` |
+| Deploy | Vercel, projeto `metodo-7-dias-acolhimento`, produção automática a cada push na `main` |
+| Container GTM | GTM-TKW5TWQT, conta FreedomPulse, versão 2 publicada |
+| Pixel Meta | 1830931954135863 (dataset ebookFreedom), instalado direto no código da página |
+| Checkout | https://lastlink.com/p/CF4E6DF14/checkout-payment/ |
+| Venda liberada | Não. Depende do envio de documentos na Lastlink. |
+
+Para atualizar a página, edite o `index.html` e faça push na `main`. O Vercel republica sozinho.
+
+---
+
 ## 1. Bloqueios que impedem a venda hoje
 
 | Bloqueio | Onde resolver | Impacto |
@@ -45,19 +61,28 @@ Depois aponte o domínio próprio. Página de vendas em domínio próprio conver
 
 ## 3. Tracking
 
-O bloco de configuração fica no topo do `index.html`:
+O bloco de configuração fica no topo do `index.html` e já está preenchido:
 
 ```js
 window.M7D = {
   CHECKOUT_URL: "https://lastlink.com/p/CF4E6DF14/checkout-payment/",
-  GTM_ID: "",      // preencha: GTM-XXXXXXX
-  PIXEL_ID: "",    // preencha: ID do pixel
+  GTM_ID: "GTM-TKW5TWQT",
+  PIXEL_ID: "1830931954135863",
   DEADLINE: "2026-10-19T23:59:59-03:00",
   PRECO: 147.00
 };
 ```
 
-**Importante:** GTM e Pixel só carregam na versão hospedada no seu domínio. O link publicado da página bloqueia scripts externos por política de segurança, então ele serve para validar layout e copy, nunca para medir campanha.
+O que já foi configurado no GTM:
+
+- Variável `dlv - profundidade`, lendo a chave `profundidade` da camada de dados
+- Acionador `Scroll 75 por cento`, evento personalizado `scroll_pagina` com filtro profundidade igual a 75
+- Tag `Meta - ScrollProfundo75`, HTML personalizado disparando `fbq('trackCustom','ScrollProfundo75')`
+- Versão 2 publicada
+
+Esse evento personalizado serve para montar público de remarketing de quem leu até o fim da página.
+
+O pixel base, o PageView, o ViewContent e o InitiateCheckout ficam no código da página, não no GTM. Isso garante o disparo no momento certo do carregamento e evita evento duplicado. O GTM fica livre para GA4 e qualquer tag nova.
 
 ### Eventos já implementados no dataLayer
 
@@ -197,9 +222,9 @@ Tudo por R$147, com garantia de 7 dias.
 1. Documentos enviados e identidade aprovada na Lastlink
 2. Carteira de recebimento configurada
 3. Order bump de R$37 criado e testado
-4. `GTM_ID` e `PIXEL_ID` preenchidos no `index.html`
-5. Página no domínio próprio, com HTTPS funcionando
-6. Pixel conectado também na Lastlink, em Integrações
+4. Pixel conectado também na Lastlink, em Integrações, para o evento de Compra
+5. Domínio próprio apontado no Vercel, em Settings e Domains
+6. Conferir o carregamento do GTM em aba anônima, sem extensões de bloqueio
 7. Uma compra de teste feita com cupom de 100%, para confirmar o evento de Compra no Gerenciador de Eventos
 8. Prazo real definido para a condição de lançamento, no campo `DEADLINE`
 9. Seção de depoimentos preenchida com depoimentos reais de quem comprou, nunca de pacientes
