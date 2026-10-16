@@ -322,10 +322,11 @@ footer p{font-size:13px;color:var(--muted);line-height:1.55}
 window.M7D = {
   CHECKOUT_URL: "https://lastlink.com/p/CF4E6DF14/checkout-payment/",
   GTM_ID: "GTM-TKW5TWQT",
-  PIXEL_ID: "1830931954135863",
   DEADLINE: "2026-10-19T23:59:59-03:00",
   PRECO: 147.00
 };
+/* O pixel do Meta (1830931954135863) e disparado pelo GTM.
+   Esta pagina so alimenta a camada de dados. */
 </script>
 
 <script>
@@ -340,18 +341,6 @@ window.M7D = {
   j.async = true;
   j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
   f.parentNode.insertBefore(j, f);
-})();
-/* Meta Pixel */
-(function(){
-  var id = window.M7D.PIXEL_ID;
-  if(!id) return;
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', id);
-  fbq('track', 'PageView');
 })();
 </script>
 
@@ -802,8 +791,7 @@ window.M7D = {
       var vaiProCheckout = (el.getAttribute('href') || '').indexOf('lastlink.com') > -1;
       if(vaiProCheckout){
         el.setAttribute('href', checkoutUrl(origem));
-        dl.push({event:'inicio_checkout', cta_origem:origem, valor:CFG.PRECO, moeda:'BRL'});
-        if(window.fbq) fbq('track','InitiateCheckout',{value:CFG.PRECO, currency:'BRL', content_name:'Metodo 7 Dias de Acolhimento'});
+        dl.push({event:'inicio_checkout', cta_origem:origem, valor:CFG.PRECO, moeda:'BRL', produto:'Metodo 7 Dias de Acolhimento'});
       } else {
         dl.push({event:'clique_cta', cta_origem:origem});
       }
@@ -812,7 +800,6 @@ window.M7D = {
 
   /* 3. ViewContent na carga */
   dl.push({event:'ver_pagina_vendas', produto:'Metodo 7 Dias de Acolhimento', valor:CFG.PRECO, moeda:'BRL'});
-  if(window.fbq) fbq('track','ViewContent',{value:CFG.PRECO, currency:'BRL', content_name:'Metodo 7 Dias de Acolhimento'});
 
   /* 4. Profundidade de rolagem */
   var marcos = [25,50,75,90], vistos = {};
