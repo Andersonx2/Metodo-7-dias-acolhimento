@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Cadencia pronta de 8 mensagens para transformar contatos de WhatsApp em pacientes agendados, em 7 dias, dentro do Codigo de Etica.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Metodo 7 Dias de Acolhimento">
+<meta property="og:description" content="Do primeiro oi no WhatsApp ate a sessao marcada, em 7 dias. Guia completo e seis materiais de aplicacao por R$147.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E6B57'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23fff' text-anchor='middle'%3E7%3C/text%3E%3C/svg%3E">
+<style>
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<title>Método 7 Dias de Acolhimento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+/* Layout: coluna narrativa única; a espinha da página é a linha vertical dos 7 dias,
+   marcada em mono, com blocos de oferta em cartão sobre papel. */
+:root{
+  --bg:#F1F4F2;
+  --surface:#FFFFFF;
+  --surface-2:#E7EDEA;
+  --ink:#141F1C;
+  --muted:#566761;
+  --line:#D3DDD8;
+  --accent:#0E6B57;
+  --accent-ink:#FFFFFF;
+  --accent-soft:#D9EBE4;
+  --gold:#9A6B16;
+  --gold-soft:#F5E8CF;
+  --alert:#8C3A1B;
+  --shadow:0 1px 2px rgba(20,31,28,.06), 0 8px 24px rgba(20,31,28,.07);
+  --font-display:"Fraunces","Iowan Old Style",Georgia,serif;
+  --font-body:"Karla","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --maxw:720px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1412;
+    --surface:#151D1A;
+    --surface-2:#1C2622;
+    --ink:#E7EEEA;
+    --muted:#9DAFA8;
+    --line:#293531;
+    --accent:#35B795;
+    --accent-ink:#07211B;
+    --accent-soft:#16302A;
+    --gold:#D7A64A;
+    --gold-soft:#2A2113;
+    --alert:#E08A63;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1412;
+  --surface:#151D1A;
+  --surface-2:#1C2622;
+  --ink:#E7EEEA;
+  --muted:#9DAFA8;
+  --line:#293531;
+  --accent:#35B795;
+  --accent-ink:#07211B;
+  --accent-soft:#16302A;
+  --gold:#D7A64A;
+  --gold-soft:#2A2113;
+  --alert:#E08A63;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+section{padding-block:clamp(40px,7vw,72px)}
+section.band{background:var(--surface-2)}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(30px,6.4vw,46px);line-height:1.12}
+h2{font-size:clamp(24px,4.6vw,33px);line-height:1.18}
+h3{font-size:clamp(18px,3vw,21px);line-height:1.3}
+p{margin:0}
+.stack{display:flex;flex-direction:column;gap:18px}
+.stack-sm{display:flex;flex-direction:column;gap:10px}
+.stack-lg{display:flex;flex-direction:column;gap:32px}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0;
+}
+.lead{font-size:clamp(18px,2.6vw,20px);color:var(--ink)}
+.muted{color:var(--muted)}
+.small{font-size:14.5px;line-height:1.55}
+strong{font-weight:700}
+em{font-style:italic}
+a{color:var(--accent)}
+
+/* Cabeçalho fixo */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.topbar{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:9;
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-block:10px;
+}
+.topbar .mark{font-family:var(--font-display);font-weight:600;font-size:15px;line-height:1.2}
+.topbar .mark span{display:block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--accent);color:var(--accent-ink);
+  font-family:var(--font-body);font-weight:700;font-size:16px;
+  text-decoration:none;border:0;border-radius:10px;
+  padding:14px 22px;line-height:1.2;text-align:center;
+  box-shadow:var(--shadow);
+  transition:transform .15s ease, filter .15s ease;
+}
+.btn:hover{filter:brightness(1.07)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn-sm{padding:9px 15px;font-size:14px;border-radius:8px}
+.btn-block{width:100%}
+.cta-note{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+
+/* Hero */
+.hero{padding-top:clamp(32px,6vw,56px)}
+.hero-grid{display:grid;gap:30px}
+.price-inline{font-family:var(--font-mono);font-size:14px;color:var(--muted)}
+.price-inline b{color:var(--ink);font-weight:500}
+
+/* Mock de conversa */
+.thread{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:9px;
+  min-width:0;
+}
+.thread .head{
+  display:flex;align-items:center;gap:9px;
+  padding-bottom:11px;margin-bottom:3px;border-bottom:1px solid var(--line);
+}
+.thread .avatar{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;
+  font-family:var(--font-mono);font-size:12px;font-weight:500;
+  flex:none;
+}
+.thread .who{font-size:13.5px;font-weight:700;line-height:1.25;min-width:0}
+.thread .who span{display:block;font-weight:400;font-size:11.5px;color:var(--muted)}
+.bubble{
+  max-width:86%;padding:9px 13px;border-radius:13px;font-size:14.5px;line-height:1.45;
+  min-width:0;overflow-wrap:anywhere;
+}
+.bubble.them{background:var(--surface-2);border-bottom-left-radius:4px;align-self:flex-start}
+.bubble.me{background:var(--accent-soft);border-bottom-right-radius:4px;align-self:flex-end}
+.bubble time{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--muted);margin-top:4px}
+.silence{
+  align-self:center;text-align:center;
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--alert);padding-top:6px;
+}
+
+/* Listas de dor */
+ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+ul.plain li{position:relative;padding-left:26px}
+ul.plain li::before{
+  content:"";position:absolute;left:4px;top:11px;
+  width:8px;height:8px;border-radius:2px;background:var(--accent);
+}
+ul.check li::before{
+  content:"";position:absolute;left:2px;top:7px;width:12px;height:7px;
+  border-left:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);
+  transform:rotate(-45deg);background:none;border-radius:0;
+}
+
+/* Linha dos 7 dias */
+.days{list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:22px}
+.days::before{
+  content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(var(--accent),var(--line));
+}
+.day{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;min-width:0}
+.day .n{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--accent);color:var(--accent);
+  display:grid;place-items:center;position:relative;z-index:1;
+  font-family:var(--font-mono);font-size:12px;font-weight:500;line-height:1;
+}
+.day .n b{display:block;font-size:15px;font-weight:500}
+.day .body{min-width:0;display:flex;flex-direction:column;gap:6px}
+.day .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+/* Cartões */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:clamp(18px,3.4vw,26px);box-shadow:var(--shadow);min-width:0;
+}
+.cards{display:grid;gap:14px}
+@media (min-width:620px){.cards.two{grid-template-columns:1fr 1fr}}
+.kit{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.kit li{
+  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;
+  padding-block:15px;border-top:1px solid var(--line);min-width:0;
+}
+.kit li:first-child{border-top:0;padding-top:0}
+.kit .label{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;
+}
+.kit .label.main{color:var(--accent)}
+.kit h3{margin-bottom:3px}
+
+/* Tabela ética */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:420px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;
+}
+td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* Oferta */
+.offer{
+  background:var(--surface);border:2px solid var(--accent);border-radius:16px;
+  padding:clamp(20px,4vw,32px);box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:20px;
+}
+.badge{
+  display:inline-block;align-self:flex-start;
+  background:var(--gold-soft);color:var(--gold);
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  padding:6px 11px;border-radius:999px;
+}
+.price{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.price .big{font-family:var(--font-display);font-size:clamp(38px,8vw,54px);font-weight:700;line-height:1;letter-spacing:-.02em}
+.price .cur{font-family:var(--font-display);font-size:20px;font-weight:600}
+.price .cond{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.countdown{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  font-family:var(--font-mono);font-size:13px;color:var(--muted);
+}
+.countdown b{
+  color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;
+  background:var(--surface-2);padding:3px 8px;border-radius:6px;
+}
+
+/* Garantia */
+.guarantee{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.seal{
+  width:62px;height:62px;border-radius:50%;flex:none;
+  border:2px dashed var(--accent);color:var(--accent);
+  display:grid;place-items:center;text-align:center;line-height:1.05;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;
+}
+.seal b{display:block;font-size:19px;font-weight:500}
+
+/* FAQ */
+details{border-top:1px solid var(--line);padding-block:14px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{
+  cursor:pointer;list-style:none;font-weight:700;font-size:16.5px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";margin-left:auto;color:var(--accent);font-family:var(--font-mono);
+  font-size:19px;line-height:1.1;flex:none;transition:transform .2s ease;
+}
+details[open] summary::after{content:"–"}
+details:focus-within summary{outline:none}
+summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:4px}
+details p{margin-top:10px;color:var(--muted);font-size:15.5px}
+
+footer{background:var(--surface);border-top:1px solid var(--line);padding-block:34px}
+footer .wrap{display:flex;flex-direction:column;gap:12px}
+footer p{font-size:13px;color:var(--muted);line-height:1.55}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+
+<!-- ───────────────────────────────────────────────────────────────
+     CONFIGURAÇÃO. Preencha os três IDs antes de subir no domínio.
+     O GTM e o Pixel só carregam no seu domínio próprio.
+     ─────────────────────────────────────────────────────────────── -->
+<script>
+window.M7D = {
+  CHECKOUT_URL: "https://lastlink.com/p/CF4E6DF14/checkout-payment/",
+  GTM_ID: "GTM-TKW5TWQT",
+  PIXEL_ID: "1830931954135863",
+  DEADLINE: "2026-10-19T23:59:59-03:00",
+  PRECO: 147.00
+};
+</script>
+
+<script>
+/* Google Tag Manager */
+(function(){
+  var id = window.M7D.GTM_ID;
+  window.dataLayer = window.dataLayer || [];
+  if(!id) return;
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+  var f = document.getElementsByTagName('script')[0];
+  var j = document.createElement('script');
+  j.async = true;
+  j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+  f.parentNode.insertBefore(j, f);
+})();
+/* Meta Pixel */
+(function(){
+  var id = window.M7D.PIXEL_ID;
+  if(!id) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', id);
+  fbq('track', 'PageView');
+})();
+</script>
+
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKW5TWQT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="topbar">
+  <div class="wrap">
+    <div class="mark">Método 7 Dias de Acolhimento<span>Para psicólogas e psicólogos</span></div>
+    <a class="btn btn-sm js-cta" data-cta="topo" href="#oferta">Quero o método</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="stack">
+        <p class="eyebrow">Atendimento clínico via WhatsApp</p>
+        <h1>Do primeiro “oi” no WhatsApp até a sessão marcada, em 7 dias.</h1>
+        <p class="lead muted">Uma cadência de 8 mensagens, com scripts prontos, triagem estruturada e linguagem alinhada ao Código de Ética. Você responde com acolhimento e a agenda fecha sozinha.</p>
+        <div class="stack-sm">
+          <a class="btn js-cta" data-cta="hero" href="#oferta">Quero aplicar o método</a>
+          <p class="price-inline"><b>R$ 147</b> à vista · acesso imediato · 7 dias de garantia</p>
+        </div>
+      </div>
+
+      <div class="thread" aria-label="Exemplo de conversa que trava no preço">
+        <div class="head">
+          <div class="avatar" aria-hidden="true">PV</div>
+          <div class="who">Paciente em potencial<span>visto por último hoje</span></div>
+        </div>
+        <div class="bubble them">Oi, boa tarde. Vi seu perfil e queria saber como funciona a terapia.<time>14:02</time></div>
+        <div class="bubble me">Oi! Que bom te receber aqui. A sessão é de 50 minutos, online, uma vez por semana.<time>14:31</time></div>
+        <div class="bubble them">Entendi. E quanto custa?<time>14:33</time></div>
+        <div class="bubble me">R$ 200 a sessão.<time>14:34</time></div>
+        <p class="silence">quatro dias sem resposta</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="band">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">O que trava a agenda</p>
+        <h2>A conversa morre sempre no mesmo lugar.</h2>
+        <p class="muted">A pessoa chega aberta, conta um pedaço do que está sentindo e some quando o valor aparece. Quem atende sente que fez tudo certo. O que faltou foi a sequência entre o primeiro contato e o momento de decidir.</p>
+      </div>
+      <ul class="plain">
+        <li>Você responde o contato em horário de sessão, corrido, e a resposta sai curta demais para acolher.</li>
+        <li>O valor entra na conversa antes da pessoa entender o que vai receber por ele.</li>
+        <li>A pessoa diz “vou pensar” e você fica sem saber se insiste, se espera ou se desiste.</li>
+        <li>Quem agenda a primeira sessão falta, e o horário que ficou vago já tinha sido recusado para outra pessoa.</li>
+        <li>Você evita qualquer movimento que pareça venda, porque a dúvida sobre o que o CFP permite paralisa.</li>
+        <li>No fim do mês os contatos existiram, a agenda continuou com buracos e a renda ficou imprevisível.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MECANISMO -->
+  <section>
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">O mecanismo</p>
+        <h2>A janela de decisão de um paciente dura cerca de uma semana.</h2>
+        <p class="muted">Quem procura terapia costuma mandar mensagem num dia de pico emocional. Passados alguns dias, a urgência baixa, a rotina volta e a decisão fica para depois. O Método 7 Dias de Acolhimento ocupa essa janela com oito contatos planejados, cada um com uma função clara.</p>
+      </div>
+
+      <div class="cards two">
+        <div class="card stack-sm">
+          <h3>Acolhimento vem antes de proposta</h3>
+          <p class="small muted">As perguntas seguem a estrutura SPIN adaptada ao contexto clínico, passando por situação, problema, implicação e benefício. A pessoa percebe o valor do processo antes de ver o preço.</p>
+        </div>
+        <div class="card stack-sm">
+          <h3>Cada mensagem tem um propósito</h3>
+          <p class="small muted">Nada é enviado por insistência. Cada toque da cadência reconhece a dor, agenda a triagem, reduz a falta, apresenta o plano, abre espaço para dúvida ou devolve autonomia à pessoa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OS 7 DIAS -->
+  <section class="band">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">A cadência completa</p>
+        <h2>Os sete dias, um por um.</h2>
+        <p class="muted">Esta é a espinha do método. Cada dia vem com o texto pronto para copiar, o intervalo recomendado e o ajuste para quando a pessoa responde antes do previsto.</p>
+      </div>
+
+      <ol class="days">
+        <li class="day">
+          <div class="n"><b>1</b></div>
+          <div class="body">
+            <p class="tag">Minuto zero e primeiras 2 horas</p>
+            <h3>Reconhecer e nomear a dor</h3>
+            <p class="small muted">A resposta automática recebe a pessoa, mostra seu nome e CRP, e pede uma frase sobre o que mais pesa hoje. Duas horas depois sai o convite para a triagem gratuita de 20 minutos, com duas opções de horário.</p>
+          </div>
+        </li>
+        <li class="day">
+          <div class="n"><b>2</b></div>
+          <div class="body">
+            <p class="tag">Triagem</p>
+            <h3>Lembrete e escuta estruturada</h3>
+            <p class="small muted">Uma hora antes sai o lembrete com o link da sala, que é o que derruba a falta na triagem. A conversa de 20 minutos segue a ficha de triagem que acompanha o método.</p>
+          </div>
+        </li>
+        <li class="day">
+          <div class="n"><b>2</b></div>
+          <div class="body">
+            <p class="tag">Logo após a triagem</p>
+            <h3>Resumo do plano, ainda sem valor</h3>
+            <p class="small muted">Você devolve em três linhas o objetivo principal, a frequência e as orientações práticas da primeira fase. A pessoa lê e enxerga um caminho com começo, meio e critério de progresso.</p>
+          </div>
+        </li>
+        <li class="day">
+          <div class="n"><b>3</b></div>
+          <div class="body">
+            <p class="tag">Proposta</p>
+            <h3>O valor chega depois do plano</h3>
+            <p class="small muted">A proposta apresenta sessão avulsa e pacote, com o horário reservado por 48 horas. O preço aparece como consequência do que foi combinado, e a reserva dá um prazo natural para a decisão.</p>
+          </div>
+        </li>
+        <li class="day">
+          <div class="n"><b>4</b></div>
+          <div class="body">
+            <p class="tag">24 horas depois</p>
+            <h3>Abrir espaço para a dúvida real</h3>
+            <p class="small muted">Uma única mensagem pergunta se há dúvida sobre o plano ou sobre a forma de pagamento, e oferece ajuste de frequência ou de data. A objeção que estava em silêncio aparece e pode ser respondida.</p>
+          </div>
+        </li>
+        <li class="day">
+          <div class="n"><b>6</b></div>
+          <div class="body">
+            <p class="tag">Reciprocidade</p>
+            <h3>Entregar algo útil sem cobrar nada</h3>
+            <p class="small muted">Um micro conteúdo curto, como o exercício de respiração em quatro passos, chega sem pedido de resposta. A pessoa experimenta na prática como é ser cuidada por você.</p>
+          </div>
+        </li>
+        <li class="day">
+          <div class="n"><b>7</b></div>
+          <div class="body">
+            <p class="tag">Encerramento do ciclo</p>
+            <h3>Porta aberta</h3>
+            <p class="small muted">A última mensagem devolve o tempo para a pessoa e deixa um gatilho simples de retomada. Boa parte das conversões acontece semanas depois, exatamente por causa dessa mensagem.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- O QUE VEM JUNTO -->
+  <section>
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">O que você recebe</p>
+        <h2>Um guia e seis materiais de aplicação.</h2>
+        <p class="muted">O acesso é imediato depois da compra, pela área de membros. Tudo em PDF e planilha, pronto para editar com seu nome e seu CRP.</p>
+      </div>
+
+      <div class="card">
+        <ul class="kit">
+          <li>
+            <span class="label main">Guia</span>
+            <div>
+              <h3>Método 7 Dias de Acolhimento</h3>
+              <p class="small muted">A cadência completa com os oito textos prontos, a jornada do contato em cinco etapas, o SPIN adaptado à clínica, as técnicas de rapport por texto e a forma de apresentar o investimento depois do plano.</p>
+            </div>
+          </li>
+          <li>
+            <span class="label">Bônus 1</span>
+            <div>
+              <h3>Kit Perfil Pronto</h3>
+              <p class="small muted">Como configurar o WhatsApp profissional: foto, nome de exibição com CRP, status com horário de atendimento, mensagem de ausência e etiquetas de organização dos contatos.</p>
+            </div>
+          </li>
+          <li>
+            <span class="label">Bônus 2</span>
+            <div>
+              <h3>Ficha de Triagem</h3>
+              <p class="small muted">O roteiro dos 20 minutos de triagem, com as perguntas na ordem que sustenta a conversa e os campos para registrar o que vira o plano inicial.</p>
+            </div>
+          </li>
+          <li>
+            <span class="label">Bônus 3</span>
+            <div>
+              <h3>Checklist de Divulgação Ética</h3>
+              <p class="small muted">A lista do que pode e do que não pode na hora de divulgar seu trabalho, para você escrever com segurança sobre sigilo, depoimentos, promessas de resultado e divulgação de valores.</p>
+            </div>
+          </li>
+          <li>
+            <span class="label">Bônus 4</span>
+            <div>
+              <h3>Pacote Anti-falta</h3>
+              <p class="small muted">Os lembretes, o intervalo de envio e a política de cancelamento e reagendamento que reduzem o buraco na agenda causado por faltas de última hora.</p>
+            </div>
+          </li>
+          <li>
+            <span class="label">Bônus 5</span>
+            <div>
+              <h3>Planilha Funil de Pacientes</h3>
+              <p class="small muted">Planilha com as fórmulas já montadas para acompanhar resposta, triagem, proposta, conversão e falta, com as cores de status indicando onde está o gargalo do mês.</p>
+            </div>
+          </li>
+          <li>
+            <span class="label">Bônus 6</span>
+            <div>
+              <h3>Termo e Onboarding</h3>
+              <p class="small muted">Minuta de termo de prestação de serviços psicológicos online e o passo a passo de boas-vindas do primeiro atendimento, incluindo instruções técnicas de acesso à sala.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="stack-sm">
+        <a class="btn btn-block js-cta" data-cta="kit" href="#oferta">Quero receber o kit completo</a>
+        <p class="cta-note" style="text-align:center">Acesso imediato após a confirmação do pagamento</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTICA -->
+  <section class="band">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">Dentro das regras da profissão</p>
+        <h2>Nenhuma linha do método pede que você ignore o Código de Ética.</h2>
+        <p class="muted">Todo o material foi escrito respeitando sigilo, identificação profissional e consentimento. O que está aqui é organização da conversa, com a mesma postura que você já tem no consultório.</p>
+      </div>
+
+      <div class="table-scroll card">
+        <table>
+          <caption class="small muted" style="text-align:left;padding-bottom:12px">Como o método trata cada ponto sensível</caption>
+          <thead>
+            <tr><th scope="col">O método usa</th><th scope="col">O método evita</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sessão de acolhimento gratuita de até 20 minutos como triagem</td>
+              <td>Depoimentos ou opiniões de pacientes que permitam identificação</td>
+            </tr>
+            <tr>
+              <td>Nome, formação e número de registro visíveis no primeiro contato</td>
+              <td>Promessa de cura ou de resultado garantido</td>
+            </tr>
+            <tr>
+              <td>Consentimento informado sobre o caráter profissional da conversa</td>
+              <td>Linguagem sensacionalista que cria falsa expectativa</td>
+            </tr>
+            <tr>
+              <td>Divulgação clara de valores, sem custo escondido</td>
+              <td>Registro ou compartilhamento de conversas sem autorização</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTRICAS -->
+  <section>
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">Como medir</p>
+        <h2>O método vem com os números que você passa a acompanhar.</h2>
+        <p class="muted">Estas são as metas de referência que a planilha do funil usa para apontar o gargalo. Elas servem para você comparar seu mês com um padrão de atendimento organizado.</p>
+      </div>
+      <div class="table-scroll card">
+        <table>
+          <thead>
+            <tr><th scope="col">Indicador</th><th scope="col">Meta de referência</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Taxa de resposta ao primeiro contato</td><td class="num">≥ 80%</td></tr>
+            <tr><td>Conversão de triagem para proposta</td><td class="num">≥ 60%</td></tr>
+            <tr><td>Conversão de proposta para sessão paga</td><td class="num">≥ 50%</td></tr>
+            <tr><td>Faltas na primeira sessão</td><td class="num">≤ 10%</td></tr>
+            <tr><td>Satisfação após quatro semanas</td><td class="num">≥ 90%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted">As metas acima são parâmetros de acompanhamento do próprio método. Resultados variam conforme perfil de público, região e volume de contatos.</p>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section class="band">
+    <div class="wrap stack-lg">
+      <div class="cards two">
+        <div class="card stack-sm">
+          <h3>Faz sentido para você se</h3>
+          <ul class="plain check small">
+            <li>Você já recebe contatos no WhatsApp e eles somem antes de agendar.</li>
+            <li>Você atende online, presencial ou nos dois formatos.</li>
+            <li>Você está começando a clínica e quer um padrão de atendimento desde o primeiro contato.</li>
+            <li>Você quer divulgar seu trabalho sem passar do limite ético.</li>
+          </ul>
+        </div>
+        <div class="card stack-sm">
+          <h3>Não faz sentido se</h3>
+          <ul class="plain small">
+            <li>Você procura um script de pressão para fechar a qualquer custo.</li>
+            <li>Você espera que o material traga pacientes sem nenhuma divulgação do seu lado.</li>
+            <li>Sua agenda já está completa e com lista de espera.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section id="oferta">
+    <div class="wrap stack-lg">
+      <div class="offer">
+        <span class="badge">Condição de lançamento</span>
+        <div class="stack-sm">
+          <h2>Método 7 Dias de Acolhimento</h2>
+          <p class="muted small">Guia completo com a cadência de 8 mensagens, mais os seis materiais de aplicação. Acesso imediato e vitalício pela área de membros.</p>
+        </div>
+
+        <div class="price">
+          <span class="cur">R$</span><span class="big">147</span>
+          <span class="cond">à vista, ou parcelado no cartão</span>
+        </div>
+
+        <p class="countdown" id="countdown" hidden>Condição de lançamento encerra em <b id="cd-val">--</b></p>
+
+        <ul class="plain check small">
+          <li>Acesso imediato, liberado assim que o pagamento é confirmado</li>
+          <li>Materiais editáveis, para você colocar seu nome e seu CRP</li>
+          <li>Garantia incondicional de 7 dias</li>
+        </ul>
+
+        <a class="btn btn-block js-cta" data-cta="oferta" href="https://lastlink.com/p/CF4E6DF14/checkout-payment/">Garantir meu acesso agora</a>
+        <p class="cta-note" style="text-align:center">Pagamento processado pela Lastlink. Pix, cartão ou boleto.</p>
+      </div>
+
+      <div class="card guarantee">
+        <div class="seal" aria-hidden="true"><span><b>7</b>dias</span></div>
+        <div class="stack-sm">
+          <h3>Se não servir para a sua rotina, a devolução é integral</h3>
+          <p class="small muted">Você tem sete dias para ler o guia inteiro, abrir todos os bônus e aplicar a cadência com um contato real. Se concluir que não é para você, basta pedir o reembolso dentro do prazo e o valor volta integralmente, sem justificativa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS: só publique com depoimentos reais de quem comprou o material.
+       Depoimentos de pacientes são vedados pelo Código de Ética. Use psicólogas que
+       adquiriram o método, com autorização por escrito.
+  <section class="band">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">Quem já aplicou</p>
+        <h2>O que mudou na agenda delas.</h2>
+      </div>
+      <div class="cards two">
+        <div class="card stack-sm">
+          <p class="small">"[DEPOIMENTO REAL AQUI]"</p>
+          <p class="cta-note">[Nome] · CRP [número]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- FAQ -->
+  <section class="band">
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2>O que costuma ficar em dúvida.</h2>
+      </div>
+      <div>
+        <details>
+          <summary>Isso não entra em conflito com o Código de Ética?</summary>
+          <p>O método organiza a forma como você conduz o atendimento inicial, mantendo sigilo, identificação profissional e consentimento. O Checklist de Divulgação Ética que acompanha o material mostra exatamente onde está o limite de cada prática.</p>
+        </details>
+        <details>
+          <summary>Preciso entender de marketing para aplicar?</summary>
+          <p>Não. Os textos já vêm prontos, com indicação do momento de envio e do que ajustar em cada caso. Sua parte é personalizar com seu nome, seu CRP e as palavras que a pessoa usou na conversa.</p>
+        </details>
+        <details>
+          <summary>Em quanto tempo consigo aplicar?</summary>
+          <p>A leitura do guia leva cerca de uma hora. A configuração do perfil e das respostas rápidas leva mais uma. A partir daí a cadência roda em cima dos contatos que já chegam para você.</p>
+        </details>
+        <details>
+          <summary>Serve para atendimento presencial?</summary>
+          <p>Serve. A cadência trata do período entre o primeiro contato e a sessão agendada, que acontece pelo WhatsApp nos dois formatos. Os ajustes de local e de deslocamento estão indicados no guia.</p>
+        </details>
+        <details>
+          <summary>Como recebo o material?</summary>
+          <p>Assim que o pagamento é confirmado, você recebe por e-mail o acesso à área de membros com o guia e os seis bônus para baixar. O acesso é vitalício.</p>
+        </details>
+        <details>
+          <summary>E se eu não gostar?</summary>
+          <p>Você pede o reembolso dentro de sete dias e recebe o valor integral de volta, sem precisar justificar.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO -->
+  <section>
+    <div class="wrap stack">
+      <h2>Os contatos desta semana ainda estão na janela de decisão.</h2>
+      <p class="muted">Quem mandou mensagem nos últimos dias continua esperando uma resposta que faça sentido. A cadência começa no próximo contato que chegar.</p>
+      <a class="btn js-cta" data-cta="final" href="https://lastlink.com/p/CF4E6DF14/checkout-payment/">Começar pelo Método 7 Dias</a>
+      <p class="price-inline">R$ 147 à vista · 7 dias de garantia · acesso imediato</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Método 7 Dias de Acolhimento</strong> · Material de apoio profissional para psicólogas e psicólogos.</p>
+    <p>Este material trata da organização do atendimento inicial e da comunicação com quem procura seus serviços. Ele não substitui formação clínica, supervisão ou as normas do Conselho Federal de Psicologia, que prevalecem sobre qualquer orientação aqui apresentada.</p>
+    <p>Freedom Pulse · CNPJ 51.649.277/0001-80 · Pagamentos processados pela Lastlink.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var CFG = window.M7D;
+  var dl = window.dataLayer = window.dataLayer || [];
+
+  /* 1. Repassa UTMs e parâmetros de clique para o checkout */
+  var KEEP = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','src','sck'];
+  function checkoutUrl(origem){
+    var u;
+    try { u = new URL(CFG.CHECKOUT_URL); } catch(e){ return CFG.CHECKOUT_URL; }
+    var atual = new URLSearchParams(window.location.search);
+    KEEP.forEach(function(k){
+      var v = atual.get(k);
+      if(v) u.searchParams.set(k, v);
+    });
+    u.searchParams.set('cta', origem || 'desconhecido');
+    return u.toString();
+  }
+
+  /* 2. Eventos de clique nos CTAs */
+  document.querySelectorAll('.js-cta').forEach(function(el){
+    el.addEventListener('click', function(){
+      var origem = el.getAttribute('data-cta') || 'cta';
+      var vaiProCheckout = (el.getAttribute('href') || '').indexOf('lastlink.com') > -1;
+      if(vaiProCheckout){
+        el.setAttribute('href', checkoutUrl(origem));
+        dl.push({event:'inicio_checkout', cta_origem:origem, valor:CFG.PRECO, moeda:'BRL'});
+        if(window.fbq) fbq('track','InitiateCheckout',{value:CFG.PRECO, currency:'BRL', content_name:'Metodo 7 Dias de Acolhimento'});
+      } else {
+        dl.push({event:'clique_cta', cta_origem:origem});
+      }
+    });
+  });
+
+  /* 3. ViewContent na carga */
+  dl.push({event:'ver_pagina_vendas', produto:'Metodo 7 Dias de Acolhimento', valor:CFG.PRECO, moeda:'BRL'});
+  if(window.fbq) fbq('track','ViewContent',{value:CFG.PRECO, currency:'BRL', content_name:'Metodo 7 Dias de Acolhimento'});
+
+  /* 4. Profundidade de rolagem */
+  var marcos = [25,50,75,90], vistos = {};
+  function medirScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(h <= 0) return;
+    var pct = Math.round((window.scrollY / h) * 100);
+    marcos.forEach(function(m){
+      if(pct >= m && !vistos[m]){
+        vistos[m] = true;
+        dl.push({event:'scroll_pagina', profundidade:m});
+      }
+    });
+  }
+  var travado = false;
+  window.addEventListener('scroll', function(){
+    if(travado) return;
+    travado = true;
+    window.requestAnimationFrame(function(){ medirScroll(); travado = false; });
+  }, {passive:true});
+
+  /* 5. Tempo de permanência */
+  [30,60,120].forEach(function(s){
+    setTimeout(function(){ dl.push({event:'tempo_na_pagina', segundos:s}); }, s * 1000);
+  });
+
+  /* 6. Contagem regressiva da condição de lançamento */
+  var alvo = new Date(CFG.DEADLINE).getTime();
+  var caixa = document.getElementById('countdown');
+  var valor = document.getElementById('cd-val');
+  function tick(){
+    var resta = alvo - Date.now();
+    if(isNaN(alvo)) return;
+    if(resta <= 0){ caixa.hidden = true; return; }
+    caixa.hidden = false;
+    var d = Math.floor(resta / 86400000);
+    var h = Math.floor(resta % 86400000 / 3600000);
+    var m = Math.floor(resta % 3600000 / 60000);
+    var s = Math.floor(resta % 60000 / 1000);
+    valor.textContent = (d > 0 ? d + 'd ' : '') + String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
