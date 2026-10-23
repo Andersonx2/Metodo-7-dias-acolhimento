@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Método 7 Dias de Acolhimento — apresentação</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#0E1412; --surface:#151D1A; --ink:#E7EEEA; --muted:#9DAFA8;
+    --line:#293531; --accent:#35B795; --accent-ink:#07211B; --soft:#16302A;
+    --display:"Fraunces","Iowan Old Style",Georgia,serif;
+    --body:"Karla","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--body); overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .palco{
+    flex:1; display:grid; place-items:center;
+    padding:max(24px, env(safe-area-inset-top,0px)) max(20px, env(safe-area-inset-right,0px)) 20px max(20px, env(safe-area-inset-left,0px));
+    min-height:0;
+  }
+  .slide{
+    width:min(880px, 100%); text-align:center;
+    display:none; animation:entra .5s ease both;
+  }
+  .slide.ativo{display:block}
+  @keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){ .slide{animation:none} }
+
+  .eyebrow{
+    font-family:var(--mono); font-size:11px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 18px;
+  }
+  .grande{
+    font-family:var(--display); font-weight:600;
+    font-size:clamp(26px,4.6vw,46px); line-height:1.16; margin:0;
+    letter-spacing:-.01em; text-wrap:balance;
+  }
+  .preco{font-family:var(--display);font-weight:700;font-size:clamp(56px,13vw,120px);line-height:1;margin:0}
+  .apoio{color:var(--muted); font-size:clamp(15px,2.2vw,19px); margin:18px auto 0; max-width:60ch; line-height:1.55}
+
+  .bolhas{display:flex;flex-direction:column;gap:10px;max-width:560px;margin:0 auto;text-align:left}
+  .bolha{padding:13px 16px;border-radius:14px;font-size:clamp(14px,2.2vw,17px);line-height:1.45;max-width:88%}
+  .bolha.dela{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .bolha.sua{background:var(--soft);border:1px solid var(--line);border-bottom-right-radius:4px;align-self:flex-end}
+
+  .lista{list-style:none;margin:0 auto;padding:0;max-width:640px;display:grid;gap:9px;text-align:left}
+  .lista li{
+    display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:11px 15px;font-size:clamp(13px,2vw,16px);
+  }
+  .lista .quando{font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+
+  .selo{
+    display:inline-grid;place-items:center;width:112px;height:112px;border-radius:50%;
+    border:2px dashed var(--accent);color:var(--accent);font-family:var(--mono);
+    font-size:12px;line-height:1.2;margin-bottom:22px;
+  }
+  .selo b{display:block;font-size:34px;font-weight:500}
+
+  .btn{
+    display:inline-block;margin-top:26px;background:var(--accent);color:var(--accent-ink);
+    font-weight:700;font-size:17px;text-decoration:none;padding:15px 30px;border-radius:11px;
+  }
+  .btn:focus-visible{outline:3px solid #D7A64A;outline-offset:3px}
+
+  .narracao{
+    border-top:1px solid var(--line); background:var(--surface);
+    padding:14px max(20px, env(safe-area-inset-left,0px)) max(14px, env(safe-area-inset-bottom,0px));
+    font-size:13.5px; color:var(--muted); line-height:1.5;
+    max-height:26vh; overflow:auto;
+  }
+  .narracao b{
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent); display:block; margin-bottom:5px; font-weight:500;
+  }
+  .barra{
+    display:flex;align-items:center;gap:14px;justify-content:center;
+    padding:10px 16px; border-top:1px solid var(--line); font-family:var(--mono); font-size:12px; color:var(--muted);
+  }
+  .barra button{
+    background:var(--surface);border:1px solid var(--line);color:var(--ink);
+    font-family:var(--mono);font-size:12px;padding:7px 13px;border-radius:8px;cursor:pointer;
+  }
+  .barra button:hover{border-color:var(--accent)}
+  .progresso{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;transition:width .3s ease;z-index:5}
+</style>
+</head>
+<body>
+<div class="progresso" id="progresso"></div>
+
+<div class="palco" id="palco"></div>
+
+<div class="narracao" id="narracao"></div>
+
+<div class="barra">
+  <button id="anterior" type="button">← anterior</button>
+  <span id="contador">1 / 12</span>
+  <button id="proximo" type="button">próximo →</button>
+  <button id="auto" type="button">modo automático</button>
+</div>
+
+<script>
+const CHECKOUT = "https://lastlink.com/p/CAE48DDBB/checkout-payment/";
+
+const SLIDES = [
+  { eyebrow:"A mensagem de sempre",
+    html:'<div class="bolhas"><div class="bolha dela">Oi, boa noite. Quanto custa a sessão?</div></div>',
+    nota:"Se você atende no particular, provavelmente recebeu essa mensagem hoje ou ontem. O que você responde agora decide se essa pessoa vira paciente ou vira mais um contato que sumiu." },
+
+  { eyebrow:"O que acontece depois",
+    html:'<h2 class="grande">Você manda o valor.<br>Ela visualiza.<br>E a conversa para ali.</h2>',
+    nota:"Os tiques ficam azuis e a conversa para. Três dias depois você pensa em mandar um oi, tudo bem, e desiste, porque parece insistência." },
+
+  { eyebrow:"Não é falta de competência",
+    html:'<h2 class="grande">A faculdade te preparou para a sessão.<br>A conversa antes dela ficou por sua conta.</h2>',
+    nota:"Você passou anos se preparando para os cinquenta minutos da sessão. A conversa que acontece antes dela, no WhatsApp, ninguém te ensinou." },
+
+  { eyebrow:"Quem está falando",
+    html:'<h2 class="grande">Eu vejo o outro lado da conversa.</h2>',
+    nota:"Sou o Anderson Gonçalves. Trabalho com tráfego pago e automação de WhatsApp, e passo boa parte do dia olhando o caminho entre o primeiro contato e o agendamento. Não sou psicólogo, e por isso enxergo o ponto exato em que a pessoa desiste." },
+
+  { eyebrow:"O que eu percebi",
+    html:'<h2 class="grande">Escuta antes de valor.</h2>',
+    nota:"Quem escreve para uma psicóloga quer ser ouvida antes de ouvir um preço. Organizei esse intervalo numa sequência de mensagens, cada uma com um momento e um propósito. Chamei de Método 7 Dias de Acolhimento." },
+
+  { eyebrow:"A cadência completa",
+    html:'<ul class="lista">'
+      + '<li><span class="quando">no mesmo minuto</span><span>Resposta que acolhe e pergunta o que pesa</span></li>'
+      + '<li><span class="quando">até 2 horas</span><span>Convite para os 20 minutos gratuitos</span></li>'
+      + '<li><span class="quando">1 hora antes</span><span>Lembrete que derruba a falta</span></li>'
+      + '<li><span class="quando">após a triagem</span><span>Resumo do plano, ainda sem valor</span></li>'
+      + '<li><span class="quando">2 horas depois</span><span>Proposta completa</span></li>'
+      + '<li><span class="quando">dia 1</span><span>Espaço para dúvidas</span></li>'
+      + '<li><span class="quando">dia 3</span><span>Um cuidado de presente</span></li>'
+      + '<li><span class="quando">dia 7</span><span>Porta aberta, no tempo dela</span></li>'
+      + '</ul>',
+    nota:"Oito mensagens dentro da janela em que a pessoa decide. Cada uma com um momento e um propósito." },
+
+  { eyebrow:"Nada escrito do zero",
+    html:'<div class="bolhas"><div class="bolha dela">Oi, boa noite. Quanto custa a sessão?</div>'
+      + '<div class="bolha sua">Oi, Mariana, que bom que você escreveu. Antes de falar de valores, me conta em uma frase: o que mais tem pesado pra você hoje?</div></div>',
+    nota:"Todas as mensagens vêm prontas. Você troca o nome e usa as palavras que a própria pessoa trouxe." },
+
+  { eyebrow:"Segurança",
+    html:'<h2 class="grande">Dentro do Código de Ética.</h2>',
+    nota:"Sem preço como chamariz, sem promessa de resultado e sem expor nenhum paciente." },
+
+  { eyebrow:"O que você recebe",
+    html:'<ul class="lista">'
+      + '<li><span class="quando">guia</span><span>Método 7 Dias com todos os scripts</span></li>'
+      + '<li><span class="quando">bônus 1</span><span>Kit Perfil Pronto</span></li>'
+      + '<li><span class="quando">bônus 2</span><span>Ficha de Triagem de 20 minutos</span></li>'
+      + '<li><span class="quando">bônus 3</span><span>Checklist de Divulgação Ética</span></li>'
+      + '<li><span class="quando">bônus 4</span><span>Pacote Anti-falta</span></li>'
+      + '<li><span class="quando">bônus 5</span><span>Planilha Funil de Pacientes</span></li>'
+      + '<li><span class="quando">bônus 6</span><span>Modelo de Termo e Onboarding</span></li>'
+      + '</ul>',
+    nota:"O guia com a cadência completa e seis ferramentas de aplicação, todas editáveis com seu nome e seu CRP." },
+
+  { eyebrow:"O investimento",
+    html:'<p class="preco">R$ 147</p><p class="apoio">no Pix ou em até 12x no cartão</p>',
+    nota:"Uma única paciente que começa com você e fica o primeiro mês já paga o método." },
+
+  { eyebrow:"O risco é meu",
+    html:'<div class="selo"><span><b>30</b>dias</span></div><h2 class="grande">30 dias para testar.</h2>',
+    nota:"Aplica a cadência nas suas próximas conversas. Se não fizer sentido, pede o reembolso pela plataforma e recebe cem por cento do valor, sem precisar explicar nada." },
+
+  { eyebrow:"Agora",
+    html:'<h2 class="grande">A próxima mensagem já vai chegar.</h2>'
+      + '<p class="apoio">Você pode responder do jeito de sempre, ou com o método.</p>'
+      + '<a class="btn" id="cta-final" href="' + CHECKOUT + '">Começar pelo Método 7 Dias</a>',
+    nota:"A próxima pessoa perguntando o valor da sessão já vai chegar. Clica no botão e começa hoje." }
+];
+
+const palco = document.getElementById('palco');
+const narracao = document.getElementById('narracao');
+const contador = document.getElementById('contador');
+const progresso = document.getElementById('progresso');
+
+palco.innerHTML = SLIDES.map((s, i) =>
+  '<section class="slide' + (i === 0 ? ' ativo' : '') + '" data-i="' + i + '">'
+  + '<p class="eyebrow">' + s.eyebrow + '</p>' + s.html + '</section>'
+).join('');
+
+let atual = 0;
+let timer = null;
+
+function mostrar(i){
+  atual = Math.max(0, Math.min(SLIDES.length - 1, i));
+  document.querySelectorAll('.slide').forEach(function(el, n){
+    el.classList.toggle('ativo', n === atual);
+  });
+  narracao.innerHTML = '<b>Narração do slide ' + (atual + 1) + '</b>' + SLIDES[atual].nota;
+  contador.textContent = (atual + 1) + ' / ' + SLIDES.length;
+  progresso.style.width = (((atual + 1) / SLIDES.length) * 100) + '%';
+}
+
+document.getElementById('proximo').addEventListener('click', function(){ mostrar(atual + 1); });
+document.getElementById('anterior').addEventListener('click', function(){ mostrar(atual - 1); });
+
+document.getElementById('auto').addEventListener('click', function(){
+  if (timer) { clearInterval(timer); timer = null; this.textContent = 'modo automático'; return; }
+  this.textContent = 'parar';
+  timer = setInterval(function(){
+    if (atual >= SLIDES.length - 1) { clearInterval(timer); timer = null; return; }
+    mostrar(atual + 1);
+  }, 19000);
+});
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); mostrar(atual + 1); }
+  if (e.key === 'ArrowLeft') { mostrar(atual - 1); }
+});
+
+mostrar(0);
+</script>
+</body>
+</html>

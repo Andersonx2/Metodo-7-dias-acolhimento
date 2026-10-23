@@ -24,8 +24,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 
 <style>
-/* Layout: coluna narrativa única; a espinha da página é a linha vertical dos 7 dias,
-   marcada em mono, com blocos de oferta em cartão sobre papel. */
+/* Layout: coluna narrativa única, com barra de CTA fixa no rodapé e a linha
+   vertical dos 7 dias como espinha da página. */
 :root{
   --bg:#F1F4F2;
   --surface:#FFFFFF;
@@ -47,159 +47,128 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0E1412;
-    --surface:#151D1A;
-    --surface-2:#1C2622;
-    --ink:#E7EEEA;
-    --muted:#9DAFA8;
-    --line:#293531;
-    --accent:#35B795;
-    --accent-ink:#07211B;
-    --accent-soft:#16302A;
-    --gold:#D7A64A;
-    --gold-soft:#2A2113;
-    --alert:#E08A63;
+    --bg:#0E1412; --surface:#151D1A; --surface-2:#1C2622; --ink:#E7EEEA;
+    --muted:#9DAFA8; --line:#293531; --accent:#35B795; --accent-ink:#07211B;
+    --accent-soft:#16302A; --gold:#D7A64A; --gold-soft:#2A2113; --alert:#E08A63;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0E1412;
-  --surface:#151D1A;
-  --surface-2:#1C2622;
-  --ink:#E7EEEA;
-  --muted:#9DAFA8;
-  --line:#293531;
-  --accent:#35B795;
-  --accent-ink:#07211B;
-  --accent-soft:#16302A;
-  --gold:#D7A64A;
-  --gold-soft:#2A2113;
-  --alert:#E08A63;
+  --bg:#0E1412; --surface:#151D1A; --surface-2:#1C2622; --ink:#E7EEEA;
+  --muted:#9DAFA8; --line:#293531; --accent:#35B795; --accent-ink:#07211B;
+  --accent-soft:#16302A; --gold:#D7A64A; --gold-soft:#2A2113; --alert:#E08A63;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
   color-scheme:dark;
 }
 
 *{box-sizing:border-box}
 body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--font-body);
-  font-size:17px;
-  line-height:1.6;
+  background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:17px; line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  padding-bottom:84px;
 }
 .wrap{
-  max-width:var(--maxw);
-  margin-inline:auto;
+  max-width:var(--maxw); margin-inline:auto;
   padding-left:max(16px, env(safe-area-inset-left, 0px));
   padding-right:max(16px, env(safe-area-inset-right, 0px));
 }
-section{padding-block:clamp(40px,7vw,72px)}
+section{padding-block:clamp(38px,6.5vw,68px)}
 section.band{background:var(--surface-2)}
 h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;font-weight:600;letter-spacing:-.01em}
-h1{font-size:clamp(30px,6.4vw,46px);line-height:1.12}
-h2{font-size:clamp(24px,4.6vw,33px);line-height:1.18}
-h3{font-size:clamp(18px,3vw,21px);line-height:1.3}
+h1{font-size:clamp(29px,6.2vw,45px);line-height:1.12}
+h2{font-size:clamp(23px,4.4vw,32px);line-height:1.18}
+h3{font-size:clamp(17px,2.9vw,20px);line-height:1.3}
 p{margin:0}
 .stack{display:flex;flex-direction:column;gap:18px}
 .stack-sm{display:flex;flex-direction:column;gap:10px}
-.stack-lg{display:flex;flex-direction:column;gap:32px}
-.eyebrow{
-  font-family:var(--font-mono);
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin:0;
-}
-.lead{font-size:clamp(18px,2.6vw,20px);color:var(--ink)}
+.stack-lg{display:flex;flex-direction:column;gap:30px}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0}
+.lead{font-size:clamp(17.5px,2.5vw,20px)}
 .muted{color:var(--muted)}
 .small{font-size:14.5px;line-height:1.55}
-strong{font-weight:700}
-em{font-style:italic}
+.center{text-align:center}
 a{color:var(--accent)}
 
-/* Cabeçalho fixo */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
-.topbar{
-  position:sticky;
-  top:env(safe-area-inset-top,0px);
-  z-index:9;
-  background:var(--surface);
-  border-bottom:1px solid var(--line);
-}
-.topbar .wrap{
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding-block:10px;
-}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--surface)}
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
 .topbar .mark{font-family:var(--font-display);font-weight:600;font-size:15px;line-height:1.2}
 .topbar .mark span{display:block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   background:var(--accent);color:var(--accent-ink);
   font-family:var(--font-body);font-weight:700;font-size:16px;
   text-decoration:none;border:0;border-radius:10px;
-  padding:14px 22px;line-height:1.2;text-align:center;
-  box-shadow:var(--shadow);
-  transition:transform .15s ease, filter .15s ease;
+  padding:15px 24px;line-height:1.2;text-align:center;
+  box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease;
 }
 .btn:hover{filter:brightness(1.07)}
 .btn:active{transform:translateY(1px)}
 .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .btn-sm{padding:9px 15px;font-size:14px;border-radius:8px}
+.btn-lg{font-size:18px;padding:18px 26px}
 .btn-block{width:100%}
+.btn-ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent);box-shadow:none;font-weight:500}
 .cta-note{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);letter-spacing:.02em}
 
+/* Barra fixa de conversão */
+.barra-fixa{
+  position:fixed;left:0;right:0;bottom:0;z-index:12;
+  background:var(--surface);border-top:1px solid var(--line);
+  box-shadow:0 -4px 16px rgba(20,31,28,.08);
+  padding:10px max(16px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px));
+}
+.barra-fixa .interno{
+  max-width:var(--maxw);margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.barra-fixa .valor{line-height:1.2;min-width:0}
+.barra-fixa .valor b{font-family:var(--font-display);font-size:19px;font-weight:700}
+.barra-fixa .valor span{display:block;font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.barra-fixa .btn{flex:0 0 auto}
+@media (max-width:420px){
+  .barra-fixa .valor span{font-size:10px}
+  .barra-fixa .btn{padding:13px 18px;font-size:15px}
+}
+
 /* Hero */
-.hero{padding-top:clamp(32px,6vw,56px)}
-.hero-grid{display:grid;gap:30px}
+.hero{padding-top:clamp(30px,5.5vw,52px)}
+.hero-grid{display:grid;gap:26px}
 .price-inline{font-family:var(--font-mono);font-size:14px;color:var(--muted)}
 .price-inline b{color:var(--ink);font-weight:500}
 
-/* Mock de conversa */
+.selos{display:flex;flex-wrap:wrap;gap:8px}
+.selo-item{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--surface);border:1px solid var(--line);border-radius:999px;
+  padding:7px 13px;font-size:13px;color:var(--muted);
+}
+.selo-item b{color:var(--ink);font-weight:700}
+
+/* Conversa */
 .thread{
-  background:var(--surface);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:16px;
-  box-shadow:var(--shadow);
-  display:flex;flex-direction:column;gap:9px;
-  min-width:0;
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px;min-width:0;
 }
-.thread .head{
-  display:flex;align-items:center;gap:9px;
-  padding-bottom:11px;margin-bottom:3px;border-bottom:1px solid var(--line);
-}
+.thread .head{display:flex;align-items:center;gap:9px;padding-bottom:11px;margin-bottom:3px;border-bottom:1px solid var(--line)}
 .thread .avatar{
-  width:30px;height:30px;border-radius:50%;
-  background:var(--accent-soft);color:var(--accent);
-  display:grid;place-items:center;
-  font-family:var(--font-mono);font-size:12px;font-weight:500;
-  flex:none;
+  width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);
+  display:grid;place-items:center;font-family:var(--font-mono);font-size:12px;font-weight:500;flex:none;
 }
 .thread .who{font-size:13.5px;font-weight:700;line-height:1.25;min-width:0}
 .thread .who span{display:block;font-weight:400;font-size:11.5px;color:var(--muted)}
-.bubble{
-  max-width:86%;padding:9px 13px;border-radius:13px;font-size:14.5px;line-height:1.45;
-  min-width:0;overflow-wrap:anywhere;
-}
+.bubble{max-width:86%;padding:9px 13px;border-radius:13px;font-size:14.5px;line-height:1.45;min-width:0;overflow-wrap:anywhere}
 .bubble.them{background:var(--surface-2);border-bottom-left-radius:4px;align-self:flex-start}
 .bubble.me{background:var(--accent-soft);border-bottom-right-radius:4px;align-self:flex-end}
 .bubble time{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--muted);margin-top:4px}
-.silence{
-  align-self:center;text-align:center;
-  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--alert);padding-top:6px;
-}
+.silence{align-self:center;text-align:center;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--alert);padding-top:6px}
 
-/* Listas de dor */
 ul.plain{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
 ul.plain li{position:relative;padding-left:26px}
-ul.plain li::before{
-  content:"";position:absolute;left:4px;top:11px;
-  width:8px;height:8px;border-radius:2px;background:var(--accent);
-}
+ul.plain li::before{content:"";position:absolute;left:4px;top:11px;width:8px;height:8px;border-radius:2px;background:var(--accent)}
 ul.check li::before{
   content:"";position:absolute;left:2px;top:7px;width:12px;height:7px;
   border-left:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);
@@ -207,130 +176,87 @@ ul.check li::before{
 }
 
 /* Linha dos 7 dias */
-.days{list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:22px}
-.days::before{
-  content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;
-  background:linear-gradient(var(--accent),var(--line));
-}
+.days{list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:20px}
+.days::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--accent),var(--line))}
 .day{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;min-width:0}
 .day .n{
-  width:44px;height:44px;border-radius:50%;
-  background:var(--surface);border:2px solid var(--accent);color:var(--accent);
-  display:grid;place-items:center;position:relative;z-index:1;
-  font-family:var(--font-mono);font-size:12px;font-weight:500;line-height:1;
+  width:44px;height:44px;border-radius:50%;background:var(--surface);
+  border:2px solid var(--accent);color:var(--accent);display:grid;place-items:center;
+  position:relative;z-index:1;font-family:var(--font-mono);font-size:12px;font-weight:500;line-height:1;
 }
 .day .n b{display:block;font-size:15px;font-weight:500}
-.day .body{min-width:0;display:flex;flex-direction:column;gap:6px}
+.day .body{min-width:0;display:flex;flex-direction:column;gap:5px}
 .day .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
 
-/* Cartões */
-.card{
-  background:var(--surface);border:1px solid var(--line);border-radius:14px;
-  padding:clamp(18px,3.4vw,26px);box-shadow:var(--shadow);min-width:0;
-}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(17px,3.2vw,26px);box-shadow:var(--shadow);min-width:0}
 .cards{display:grid;gap:14px}
 @media (min-width:620px){.cards.two{grid-template-columns:1fr 1fr}}
+
 .kit{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.kit li{
-  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;
-  padding-block:15px;border-top:1px solid var(--line);min-width:0;
-}
+.kit li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;padding-block:15px;border-top:1px solid var(--line);min-width:0}
 .kit li:first-child{border-top:0;padding-top:0}
-.kit .label{
-  font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--muted);white-space:nowrap;
-}
+.kit .label{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .kit .label.main{color:var(--accent)}
 .kit h3{margin-bottom:3px}
 
-/* Tabela ética */
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{border-collapse:collapse;width:100%;font-size:15px;min-width:420px}
 th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-th{
-  font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--muted);font-weight:500;
-}
+th{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
 td.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 
+/* Objeções */
+.objecoes{display:grid;gap:12px}
+.objecao{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 18px}
+.objecao .fala{font-family:var(--font-display);font-style:italic;font-size:17px;margin-bottom:7px}
+.objecao p{font-size:15px;color:var(--muted);line-height:1.55}
+
 /* Oferta */
-.offer{
-  background:var(--surface);border:2px solid var(--accent);border-radius:16px;
-  padding:clamp(20px,4vw,32px);box-shadow:var(--shadow);
-  display:flex;flex-direction:column;gap:20px;
-}
-.badge{
-  display:inline-block;align-self:flex-start;
-  background:var(--gold-soft);color:var(--gold);
-  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
-  padding:6px 11px;border-radius:999px;
-}
+.offer{background:var(--surface);border:2px solid var(--accent);border-radius:16px;padding:clamp(20px,4vw,32px);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:20px}
+.badge{display:inline-block;align-self:flex-start;background:var(--gold-soft);color:var(--gold);font-family:var(--font-mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;padding:6px 11px;border-radius:999px}
 .price{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
-.price .big{font-family:var(--font-display);font-size:clamp(38px,8vw,54px);font-weight:700;line-height:1;letter-spacing:-.02em}
+.price .big{font-family:var(--font-display);font-size:clamp(40px,8.5vw,58px);font-weight:700;line-height:1;letter-spacing:-.02em}
 .price .cur{font-family:var(--font-display);font-size:20px;font-weight:600}
 .price .cond{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
-.countdown{
-  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
-  font-family:var(--font-mono);font-size:13px;color:var(--muted);
-}
-.countdown b{
-  color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;
-  background:var(--surface-2);padding:3px 8px;border-radius:6px;
-}
+.countdown{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.countdown b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums;background:var(--surface-2);padding:3px 8px;border-radius:6px}
 
-/* Garantia */
 .guarantee{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
 .seal{
-  width:62px;height:62px;border-radius:50%;flex:none;
-  border:2px dashed var(--accent);color:var(--accent);
-  display:grid;place-items:center;text-align:center;line-height:1.05;
-  font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;
+  width:72px;height:72px;border-radius:50%;flex:none;border:2px dashed var(--accent);color:var(--accent);
+  display:grid;place-items:center;text-align:center;line-height:1.05;font-family:var(--font-mono);font-size:10px;letter-spacing:.04em;
 }
-.seal b{display:block;font-size:19px;font-weight:500}
+.seal b{display:block;font-size:22px;font-weight:500}
 
-/* FAQ */
 details{border-top:1px solid var(--line);padding-block:14px}
 details:last-of-type{border-bottom:1px solid var(--line)}
-summary{
-  cursor:pointer;list-style:none;font-weight:700;font-size:16.5px;
-  display:flex;gap:12px;align-items:flex-start;
-}
+summary{cursor:pointer;list-style:none;font-weight:700;font-size:16.5px;display:flex;gap:12px;align-items:flex-start}
 summary::-webkit-details-marker{display:none}
-summary::after{
-  content:"+";margin-left:auto;color:var(--accent);font-family:var(--font-mono);
-  font-size:19px;line-height:1.1;flex:none;transition:transform .2s ease;
-}
+summary::after{content:"+";margin-left:auto;color:var(--accent);font-family:var(--font-mono);font-size:19px;line-height:1.1;flex:none}
 details[open] summary::after{content:"–"}
-details:focus-within summary{outline:none}
 summary:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:4px}
 details p{margin-top:10px;color:var(--muted);font-size:15.5px}
 
-footer{background:var(--surface);border-top:1px solid var(--line);padding-block:34px}
+footer{background:var(--surface);border-top:1px solid var(--line);padding-block:32px}
 footer .wrap{display:flex;flex-direction:column;gap:12px}
 footer p{font-size:13px;color:var(--muted);line-height:1.55}
 
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
 <!-- ───────────────────────────────────────────────────────────────
-     CONFIGURAÇÃO. Preencha os três IDs antes de subir no domínio.
-     O GTM e o Pixel só carregam no seu domínio próprio.
+     CONFIGURAÇÃO. O pixel do Meta vive no GTM, não neste arquivo.
      ─────────────────────────────────────────────────────────────── -->
 <script>
 window.M7D = {
   CHECKOUT_URL: "https://lastlink.com/p/CAE48DDBB/checkout-payment/",
   GTM_ID: "GTM-TKW5TWQT",
-  DEADLINE: "2026-10-19T23:59:59-03:00",
+  DEADLINE: "",
   PRECO: 147.00
 };
-/* O pixel do Meta (1830931954135863) e disparado pelo GTM.
-   Esta pagina so alimenta a camada de dados. */
 </script>
 
 <script>
-/* Google Tag Manager */
 (function(){
   var id = window.M7D.GTM_ID;
   window.dataLayer = window.dataLayer || [];
@@ -362,10 +288,17 @@ window.M7D = {
       <div class="stack">
         <p class="eyebrow">Atendimento clínico via WhatsApp</p>
         <h1>Do primeiro “oi” no WhatsApp até a sessão marcada, em 7 dias.</h1>
-        <p class="lead muted">Uma cadência de 8 mensagens, com scripts prontos, triagem estruturada e linguagem alinhada ao Código de Ética. Você responde com acolhimento e a agenda fecha sozinha.</p>
+        <p class="lead muted">Uma cadência de 8 mensagens com os textos prontos, triagem estruturada e linguagem alinhada ao Código de Ética. Você responde com acolhimento e a agenda fecha sozinha.</p>
+
         <div class="stack-sm">
-          <a class="btn js-cta" data-cta="hero" href="#oferta">Quero aplicar o método</a>
-          <p class="price-inline"><b>R$ 147</b> à vista · acesso imediato · 7 dias de garantia</p>
+          <a class="btn btn-lg js-cta" data-cta="hero" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero aplicar o método hoje</a>
+          <p class="price-inline"><b>R$ 147</b> no Pix ou 12x no cartão · acesso imediato · 30 dias de garantia</p>
+        </div>
+
+        <div class="selos">
+          <span class="selo-item"><b>7</b> materiais</span>
+          <span class="selo-item"><b>8</b> mensagens prontas</span>
+          <span class="selo-item"><b>1h</b> para aplicar</span>
         </div>
       </div>
 
@@ -380,6 +313,8 @@ window.M7D = {
         <div class="bubble me">R$ 200 a sessão.<time>14:34</time></div>
         <p class="silence">quatro dias sem resposta</p>
       </div>
+
+      <p class="small center"><a href="vsl.html" class="js-cta" data-cta="vsl">Ver a apresentação de 4 minutos</a></p>
     </div>
   </section>
 
@@ -420,6 +355,11 @@ window.M7D = {
           <h3>Cada mensagem tem um propósito</h3>
           <p class="small muted">Nada é enviado por insistência. Cada toque da cadência reconhece a dor, agenda a triagem, reduz a falta, apresenta o plano, abre espaço para dúvida ou devolve autonomia à pessoa.</p>
         </div>
+      </div>
+
+      <div class="stack-sm">
+        <a class="btn btn-block js-cta" data-cta="mecanismo" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero a cadência completa</a>
+        <p class="cta-note center">R$ 147 · acesso imediato · 30 dias de garantia</p>
       </div>
     </div>
   </section>
@@ -499,8 +439,8 @@ window.M7D = {
     <div class="wrap stack-lg">
       <div class="stack">
         <p class="eyebrow">O que você recebe</p>
-        <h2>Um guia e seis materiais de aplicação.</h2>
-        <p class="muted">O acesso é imediato depois da compra, pela área de membros. Tudo em PDF e planilha, pronto para editar com seu nome e seu CRP.</p>
+        <h2>Um guia e seis ferramentas de aplicação.</h2>
+        <p class="muted">O acesso é imediato depois da compra. Tudo em PDF e planilha, pronto para editar com seu nome e seu CRP.</p>
       </div>
 
       <div class="card">
@@ -516,7 +456,7 @@ window.M7D = {
             <span class="label">Bônus 1</span>
             <div>
               <h3>Kit Perfil Pronto</h3>
-              <p class="small muted">Como configurar o WhatsApp profissional: foto, nome de exibição com CRP, status com horário de atendimento, mensagem de ausência e etiquetas de organização dos contatos.</p>
+              <p class="small muted">Os textos do seu WhatsApp Business: foto, nome de exibição com CRP, status com horário de atendimento, mensagem de ausência e etiquetas de organização dos contatos.</p>
             </div>
           </li>
           <li>
@@ -558,8 +498,8 @@ window.M7D = {
       </div>
 
       <div class="stack-sm">
-        <a class="btn btn-block js-cta" data-cta="kit" href="#oferta">Quero receber o kit completo</a>
-        <p class="cta-note" style="text-align:center">Acesso imediato após a confirmação do pagamento</p>
+        <a class="btn btn-block btn-lg js-cta" data-cta="kit" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero receber o kit completo</a>
+        <p class="cta-note center">Uma única paciente que fica o primeiro mês já paga o método</p>
       </div>
     </div>
   </section>
@@ -575,35 +515,51 @@ window.M7D = {
 
       <div class="table-scroll card">
         <table>
-          <caption class="small muted" style="text-align:left;padding-bottom:12px">Como o método trata cada ponto sensível</caption>
           <thead>
             <tr><th scope="col">O método usa</th><th scope="col">O método evita</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Sessão de acolhimento gratuita de até 20 minutos como triagem</td>
-              <td>Depoimentos ou opiniões de pacientes que permitam identificação</td>
-            </tr>
-            <tr>
-              <td>Nome, formação e número de registro visíveis no primeiro contato</td>
-              <td>Promessa de cura ou de resultado garantido</td>
-            </tr>
-            <tr>
-              <td>Consentimento informado sobre o caráter profissional da conversa</td>
-              <td>Linguagem sensacionalista que cria falsa expectativa</td>
-            </tr>
-            <tr>
-              <td>Divulgação clara de valores, sem custo escondido</td>
-              <td>Registro ou compartilhamento de conversas sem autorização</td>
-            </tr>
+            <tr><td>Sessão de acolhimento gratuita de até 20 minutos como triagem</td><td>Depoimentos ou opiniões de pacientes que permitam identificação</td></tr>
+            <tr><td>Nome, formação e número de registro visíveis no primeiro contato</td><td>Promessa de cura ou de resultado garantido</td></tr>
+            <tr><td>Consentimento informado sobre o caráter profissional da conversa</td><td>Linguagem sensacionalista que cria falsa expectativa</td></tr>
+            <tr><td>Divulgação clara de valores, sem custo escondido</td><td>Registro ou compartilhamento de conversas sem autorização</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- MÉTRICAS -->
+  <!-- OBJEÇÕES -->
   <section>
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">O que costuma passar pela cabeça agora</p>
+        <h2>Quatro dúvidas honestas, respondidas.</h2>
+      </div>
+
+      <div class="objecoes">
+        <div class="objecao">
+          <p class="fala">“Cento e quarenta e sete reais está caro pra mim agora.”</p>
+          <p>O valor equivale a menos de uma sessão na maior parte das tabelas de consultório. Se a cadência trouxer uma única paciente que fique o primeiro mês, o método se paga quatro vezes. E você tem 30 dias para verificar isso antes de decidir ficar com ele.</p>
+        </div>
+        <div class="objecao">
+          <p class="fala">“Vou pensar e volto depois.”</p>
+          <p>A próxima pessoa perguntando o valor da sessão chega esta semana. Sem a cadência, a resposta vai ser a mesma que já deu antes, com o mesmo resultado. Com ela, essa conversa segue um caminho.</p>
+        </div>
+        <div class="objecao">
+          <p class="fala">“Não tenho tempo de estudar mais um material.”</p>
+          <p>A leitura do guia leva cerca de uma hora. A configuração do perfil e das respostas rápidas leva mais uma. A partir daí a cadência roda em cima dos contatos que já chegam para você, sem aula, sem módulo e sem prazo.</p>
+        </div>
+        <div class="objecao">
+          <p class="fala">“Não quero parecer vendedora com quem está sofrendo.”</p>
+          <p>É exatamente por isso que o preço só aparece no terceiro dia, depois do acolhimento e do plano. O método organiza a escuta, e a decisão continua sendo da pessoa, no tempo dela.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTRICAS -->
+  <section class="band">
     <div class="wrap stack-lg">
       <div class="stack">
         <p class="eyebrow">Como medir</p>
@@ -612,9 +568,7 @@ window.M7D = {
       </div>
       <div class="table-scroll card">
         <table>
-          <thead>
-            <tr><th scope="col">Indicador</th><th scope="col">Meta de referência</th></tr>
-          </thead>
+          <thead><tr><th scope="col">Indicador</th><th scope="col">Meta de referência</th></tr></thead>
           <tbody>
             <tr><td>Taxa de resposta ao primeiro contato</td><td class="num">≥ 80%</td></tr>
             <tr><td>Conversão de triagem para proposta</td><td class="num">≥ 60%</td></tr>
@@ -629,7 +583,7 @@ window.M7D = {
   </section>
 
   <!-- PARA QUEM -->
-  <section class="band">
+  <section>
     <div class="wrap stack-lg">
       <div class="cards two">
         <div class="card stack-sm">
@@ -654,51 +608,49 @@ window.M7D = {
   </section>
 
   <!-- OFERTA -->
-  <section id="oferta">
+  <section id="oferta" class="band">
     <div class="wrap stack-lg">
       <div class="offer">
-        <span class="badge">Condição de lançamento</span>
+        <span class="badge">Acesso imediato</span>
         <div class="stack-sm">
           <h2>Método 7 Dias de Acolhimento</h2>
-          <p class="muted small">Guia completo com a cadência de 8 mensagens, mais os seis materiais de aplicação. Acesso imediato e vitalício pela área de membros.</p>
+          <p class="muted small">Guia completo com a cadência de 8 mensagens, mais os seis materiais de aplicação. Acesso imediato e vitalício.</p>
         </div>
 
         <div class="price">
           <span class="cur">R$</span><span class="big">147</span>
-          <span class="cond">à vista, ou parcelado no cartão</span>
+          <span class="cond">no Pix, ou em até 12x no cartão</span>
         </div>
 
-        <p class="countdown" id="countdown" hidden>Condição de lançamento encerra em <b id="cd-val">--</b></p>
+        <p class="countdown" id="countdown" hidden>Condição encerra em <b id="cd-val">--</b></p>
 
         <ul class="plain check small">
-          <li>Acesso imediato, liberado assim que o pagamento é confirmado</li>
-          <li>Materiais editáveis, para você colocar seu nome e seu CRP</li>
-          <li>Garantia incondicional de 7 dias</li>
+          <li>Guia do método com os oito textos prontos para copiar</li>
+          <li>Seis ferramentas editáveis, do perfil ao termo de serviço</li>
+          <li>Planilha de funil com as fórmulas já montadas</li>
+          <li>Acesso imediato e vitalício, liberado na confirmação do pagamento</li>
+          <li>30 dias de garantia incondicional</li>
         </ul>
 
-        <a class="btn btn-block js-cta" data-cta="oferta" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Garantir meu acesso agora</a>
-        <p class="cta-note" style="text-align:center">Pagamento processado pela Lastlink. Pix, cartão ou boleto.</p>
+        <a class="btn btn-block btn-lg js-cta" data-cta="oferta" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Garantir meu acesso agora</a>
+        <p class="cta-note center">Pagamento processado pela Lastlink. Pix ou cartão.</p>
       </div>
 
       <div class="card guarantee">
-        <div class="seal" aria-hidden="true"><span><b>7</b>dias</span></div>
+        <div class="seal" aria-hidden="true"><span><b>30</b>dias</span></div>
         <div class="stack-sm">
           <h3>Se não servir para a sua rotina, a devolução é integral</h3>
-          <p class="small muted">Você tem sete dias para ler o guia inteiro, abrir todos os bônus e aplicar a cadência com um contato real. Se concluir que não é para você, basta pedir o reembolso dentro do prazo e o valor volta integralmente, sem justificativa.</p>
+          <p class="small muted">Você tem trinta dias para ler o guia inteiro, abrir todos os bônus e aplicar a cadência com contatos reais. Se concluir que não é para você, basta pedir o reembolso dentro do prazo e o valor volta integralmente, sem justificativa.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS: só publique com depoimentos reais de quem comprou o material.
-       Depoimentos de pacientes são vedados pelo Código de Ética. Use psicólogas que
-       adquiriram o método, com autorização por escrito.
-  <section class="band">
+  <!-- DEPOIMENTOS: publique apenas com depoimentos reais de quem comprou o material.
+       Depoimentos de pacientes são vedados pelo Código de Ética.
+  <section>
     <div class="wrap stack-lg">
-      <div class="stack">
-        <p class="eyebrow">Quem já aplicou</p>
-        <h2>O que mudou na agenda delas.</h2>
-      </div>
+      <div class="stack"><p class="eyebrow">Quem já aplicou</p><h2>O que mudou na agenda delas.</h2></div>
       <div class="cards two">
         <div class="card stack-sm">
           <p class="small">"[DEPOIMENTO REAL AQUI]"</p>
@@ -710,7 +662,7 @@ window.M7D = {
   -->
 
   <!-- FAQ -->
-  <section class="band">
+  <section>
     <div class="wrap stack-lg">
       <div class="stack">
         <p class="eyebrow">Perguntas frequentes</p>
@@ -739,19 +691,21 @@ window.M7D = {
         </details>
         <details>
           <summary>E se eu não gostar?</summary>
-          <p>Você pede o reembolso dentro de sete dias e recebe o valor integral de volta, sem precisar justificar.</p>
+          <p>Você pede o reembolso dentro de trinta dias e recebe o valor integral de volta, sem precisar justificar.</p>
         </details>
       </div>
     </div>
   </section>
 
   <!-- FECHAMENTO -->
-  <section>
-    <div class="wrap stack">
-      <h2>Os contatos desta semana ainda estão na janela de decisão.</h2>
-      <p class="muted">Quem mandou mensagem nos últimos dias continua esperando uma resposta que faça sentido. A cadência começa no próximo contato que chegar.</p>
-      <a class="btn js-cta" data-cta="final" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Começar pelo Método 7 Dias</a>
-      <p class="price-inline">R$ 147 à vista · 7 dias de garantia · acesso imediato</p>
+  <section class="band">
+    <div class="wrap stack center">
+      <h2>A próxima mensagem já vai chegar.</h2>
+      <p class="muted">Alguém vai perguntar o valor da sua sessão esta semana. Você pode responder do jeito de sempre, ou com a cadência que leva essa conversa até a agenda.</p>
+      <div class="stack-sm">
+        <a class="btn btn-lg js-cta" data-cta="final" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Começar pelo Método 7 Dias</a>
+        <p class="price-inline">R$ 147 · 30 dias de garantia · acesso imediato</p>
+      </div>
     </div>
   </section>
 
@@ -764,6 +718,13 @@ window.M7D = {
     <p>Freedom Pulse · CNPJ 51.649.277/0001-80 · Pagamentos processados pela Lastlink.</p>
   </div>
 </footer>
+
+<div class="barra-fixa" id="barra-fixa">
+  <div class="interno">
+    <div class="valor"><b>R$ 147</b><span>Pix ou 12x · 30 dias de garantia</span></div>
+    <a class="btn js-cta" data-cta="barra-fixa" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero começar</a>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -808,10 +769,7 @@ window.M7D = {
     if(h <= 0) return;
     var pct = Math.round((window.scrollY / h) * 100);
     marcos.forEach(function(m){
-      if(pct >= m && !vistos[m]){
-        vistos[m] = true;
-        dl.push({event:'scroll_pagina', profundidade:m});
-      }
+      if(pct >= m && !vistos[m]){ vistos[m] = true; dl.push({event:'scroll_pagina', profundidade:m}); }
     });
   }
   var travado = false;
@@ -826,13 +784,22 @@ window.M7D = {
     setTimeout(function(){ dl.push({event:'tempo_na_pagina', segundos:s}); }, s * 1000);
   });
 
-  /* 6. Contagem regressiva da condição de lançamento */
-  var alvo = new Date(CFG.DEADLINE).getTime();
+  /* 6. A barra fixa some quando a caixa de oferta está na tela */
+  var oferta = document.getElementById('oferta');
+  var barra = document.getElementById('barra-fixa');
+  if(oferta && barra && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entradas){
+      entradas.forEach(function(e){ barra.hidden = e.isIntersecting; });
+    }, {threshold:0.25}).observe(oferta);
+  }
+
+  /* 7. Contagem regressiva, só aparece com DEADLINE preenchido */
   var caixa = document.getElementById('countdown');
   var valor = document.getElementById('cd-val');
+  var alvo = CFG.DEADLINE ? new Date(CFG.DEADLINE).getTime() : NaN;
   function tick(){
-    var resta = alvo - Date.now();
     if(isNaN(alvo)) return;
+    var resta = alvo - Date.now();
     if(resta <= 0){ caixa.hidden = true; return; }
     caixa.hidden = false;
     var d = Math.floor(resta / 86400000);
@@ -842,7 +809,7 @@ window.M7D = {
     valor.textContent = (d > 0 ? d + 'd ' : '') + String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
   }
   tick();
-  setInterval(tick, 1000);
+  if(!isNaN(alvo)) setInterval(tick, 1000);
 })();
 </script>
 
