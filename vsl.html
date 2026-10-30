@@ -5,226 +5,544 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Método 7 Dias de Acolhimento — apresentação</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#071B17">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-  :root{
-    --bg:#0E1412; --surface:#151D1A; --ink:#E7EEEA; --muted:#9DAFA8;
-    --line:#293531; --accent:#35B795; --accent-ink:#07211B; --soft:#16302A;
-    --display:"Fraunces","Iowan Old Style",Georgia,serif;
-    --body:"Karla","Helvetica Neue",Arial,sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-    color-scheme:dark;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:var(--body); overflow:hidden;
-    display:flex; flex-direction:column;
-  }
-  .palco{
-    flex:1; display:grid; place-items:center;
-    padding:max(24px, env(safe-area-inset-top,0px)) max(20px, env(safe-area-inset-right,0px)) 20px max(20px, env(safe-area-inset-left,0px));
-    min-height:0;
-  }
-  .slide{
-    width:min(880px, 100%); text-align:center;
-    display:none; animation:entra .5s ease both;
-  }
-  .slide.ativo{display:block}
-  @keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){ .slide{animation:none} }
+:root{
+  --deep:#0B5345;
+  --ink:#FFFDF8;
+  --soft:rgba(255,253,248,.78);
+  --gold:#E8D4A4;
+  --gold-forte:#D6B776;
+  --linha:rgba(232,212,164,.30);
+  --display:"Lora","Iowan Old Style",Georgia,serif;
+  --body:"Inter","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:#07110F;color:var(--ink);font-family:var(--body);
+  display:grid;place-items:center;
+  padding:max(12px,env(safe-area-inset-top,0)) max(12px,env(safe-area-inset-right,0))
+          max(12px,env(safe-area-inset-bottom,0)) max(12px,env(safe-area-inset-left,0));
+  -webkit-font-smoothing:antialiased;
+}
 
-  .eyebrow{
-    font-family:var(--mono); font-size:11px; letter-spacing:.18em;
-    text-transform:uppercase; color:var(--accent); margin:0 0 18px;
-  }
-  .grande{
-    font-family:var(--display); font-weight:600;
-    font-size:clamp(26px,4.6vw,46px); line-height:1.16; margin:0;
-    letter-spacing:-.01em; text-wrap:balance;
-  }
-  .preco{font-family:var(--display);font-weight:700;font-size:clamp(56px,13vw,120px);line-height:1;margin:0}
-  .apoio{color:var(--muted); font-size:clamp(15px,2.2vw,19px); margin:18px auto 0; max-width:60ch; line-height:1.55}
+/* ───────── player ───────── */
+.player{
+  position:relative;width:min(1100px,100%);aspect-ratio:16/9;
+  border-radius:14px;overflow:hidden;background:var(--deep);
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
+  container-type:inline-size;
+  user-select:none;cursor:pointer;
+}
+.player.cheio{border-radius:0;width:100%;height:100%;aspect-ratio:auto}
+@media (max-width:760px){
+  body{padding:0;align-items:stretch}
+  .player{border-radius:0;width:100%;height:100%;aspect-ratio:auto}
+}
 
-  .bolhas{display:flex;flex-direction:column;gap:10px;max-width:560px;margin:0 auto;text-align:left}
-  .bolha{padding:13px 16px;border-radius:14px;font-size:clamp(14px,2.2vw,17px);line-height:1.45;max-width:88%}
-  .bolha.dela{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
-  .bolha.sua{background:var(--soft);border:1px solid var(--line);border-bottom-right-radius:4px;align-self:flex-end}
+.fundo{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(60cqw 70cqw at 78% 14%, rgba(214,183,118,.20), transparent 62%),
+    radial-gradient(55cqw 60cqw at 4% 94%, rgba(255,255,255,.07), transparent 66%),
+    linear-gradient(122deg,#0A4C3F 0%,#0E6B57 54%,#0B5245 100%);
+  animation:deriva 26s ease-in-out infinite alternate;
+}
+@keyframes deriva{
+  from{transform:scale(1.06) translate3d(-1.2%,-0.8%,0)}
+  to{transform:scale(1.14) translate3d(1.4%,1.1%,0)}
+}
+.grao{position:absolute;inset:0;z-index:1;opacity:.055;pointer-events:none;
+  background-image:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 3px)}
+.vinheta{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(130% 110% at 50% 45%,transparent 48%,rgba(0,0,0,.38) 100%)}
 
-  .lista{list-style:none;margin:0 auto;padding:0;max-width:640px;display:grid;gap:9px;text-align:left}
-  .lista li{
-    display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;
-    background:var(--surface);border:1px solid var(--line);border-radius:10px;
-    padding:11px 15px;font-size:clamp(13px,2vw,16px);
-  }
-  .lista .quando{font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap}
+/* ───────── palco ───────── */
+.palco{position:absolute;inset:0;z-index:3;display:grid;place-items:center;
+  padding:6cqw 7cqw 10cqw}
+.slide{display:none;width:100%;max-width:74cqw;text-align:center}
+.slide.ativo{display:block}
 
-  .selo{
-    display:inline-grid;place-items:center;width:112px;height:112px;border-radius:50%;
-    border:2px dashed var(--accent);color:var(--accent);font-family:var(--mono);
-    font-size:12px;line-height:1.2;margin-bottom:22px;
-  }
-  .selo b{display:block;font-size:34px;font-weight:500}
+.eyebrow{
+  font-size:1.35cqw;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 2.4cqw;display:inline-flex;align-items:center;gap:.9cqw;
+}
+.eyebrow::before{content:"";width:.55cqw;height:.55cqw;border-radius:50%;background:var(--gold-forte)}
+.grande{
+  font-family:var(--display);font-weight:700;font-size:4.2cqw;line-height:1.14;
+  letter-spacing:-.018em;margin:0;text-wrap:balance;
+}
+.grande em{font-style:italic;color:var(--gold)}
+.nota{font-size:1.7cqw;line-height:1.5;color:var(--soft);margin:2.2cqw auto 0;max-width:52ch}
+.preco{font-family:var(--display);font-weight:700;font-size:11cqw;line-height:1;margin:0;letter-spacing:-.03em}
+.preco small{font-size:3cqw;font-weight:600;vertical-align:.9cqw;margin-right:.5cqw;color:var(--gold)}
+.apoio{font-size:1.9cqw;color:var(--gold);margin:1.2cqw 0 0;font-weight:500}
 
-  .btn{
-    display:inline-block;margin-top:26px;background:var(--accent);color:var(--accent-ink);
-    font-weight:700;font-size:17px;text-decoration:none;padding:15px 30px;border-radius:11px;
-  }
-  .btn:focus-visible{outline:3px solid #D7A64A;outline-offset:3px}
+.bolhas{display:flex;flex-direction:column;gap:1.1cqw;max-width:46cqw;margin:0 auto;text-align:left}
+.bolha{padding:1.5cqw 1.9cqw;border-radius:1.5cqw;font-size:1.75cqw;line-height:1.45;max-width:88%}
+.bolha.dela{background:rgba(255,255,255,.10);border:1px solid var(--linha);border-bottom-left-radius:.4cqw;align-self:flex-start}
+.bolha.sua{background:#FFFDF8;color:#14322B;border-bottom-right-radius:.4cqw;align-self:flex-end;font-weight:500}
 
-  .narracao{
-    border-top:1px solid var(--line); background:var(--surface);
-    padding:14px max(20px, env(safe-area-inset-left,0px)) max(14px, env(safe-area-inset-bottom,0px));
-    font-size:13.5px; color:var(--muted); line-height:1.5;
-    max-height:26vh; overflow:auto;
-  }
-  .narracao b{
-    font-family:var(--mono); font-size:10.5px; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--accent); display:block; margin-bottom:5px; font-weight:500;
-  }
-  .barra{
-    display:flex;align-items:center;gap:14px;justify-content:center;
-    padding:10px 16px; border-top:1px solid var(--line); font-family:var(--mono); font-size:12px; color:var(--muted);
-  }
-  .barra button{
-    background:var(--surface);border:1px solid var(--line);color:var(--ink);
-    font-family:var(--mono);font-size:12px;padding:7px 13px;border-radius:8px;cursor:pointer;
-  }
-  .barra button:hover{border-color:var(--accent)}
-  .progresso{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;transition:width .3s ease;z-index:5}
+.lista{list-style:none;margin:0 auto;padding:0;max-width:58cqw;display:grid;gap:.6cqw;text-align:left}
+.lista.duas{max-width:68cqw;grid-template-columns:1fr 1fr;column-gap:1.1cqw}
+.lista li{
+  display:grid;grid-template-columns:9.5cqw 1fr;gap:1.1cqw;align-items:center;
+  background:rgba(255,255,255,.075);border:1px solid var(--linha);border-radius:.8cqw;
+  padding:.85cqw 1.3cqw;font-size:1.45cqw;
+}
+.lista .quando{font-size:1.05cqw;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+
+.selo{
+  display:inline-grid;place-items:center;width:11cqw;height:11cqw;border-radius:50%;
+  border:.22cqw dashed var(--gold);color:var(--gold);font-size:1.3cqw;line-height:1.15;margin-bottom:2.4cqw;
+}
+.selo b{display:block;font-family:var(--display);font-size:3.6cqw;font-weight:700;color:var(--ink)}
+
+/* entradas em camadas */
+.cam{opacity:0;transform:translateY(1.4cqw);animation:sobe .62s cubic-bezier(.22,.9,.26,1) forwards}
+@keyframes sobe{to{opacity:1;transform:none}}
+.slide.ativo .cam:nth-child(1){animation-delay:.04s}
+.slide.ativo .cam:nth-child(2){animation-delay:.26s}
+.slide.ativo .cam:nth-child(3){animation-delay:.60s}
+.slide.ativo .cam:nth-child(4){animation-delay:.84s}
+.lista li{opacity:0;animation:sobe .5s cubic-bezier(.22,.9,.26,1) forwards}
+.slide.ativo .lista li:nth-child(1){animation-delay:.55s}
+.slide.ativo .lista li:nth-child(2){animation-delay:.70s}
+.slide.ativo .lista li:nth-child(3){animation-delay:.85s}
+.slide.ativo .lista li:nth-child(4){animation-delay:1.00s}
+.slide.ativo .lista li:nth-child(5){animation-delay:1.15s}
+.slide.ativo .lista li:nth-child(6){animation-delay:1.30s}
+.slide.ativo .lista li:nth-child(7){animation-delay:1.45s}
+.slide.ativo .lista li:nth-child(8){animation-delay:1.60s}
+.bolha{opacity:0;animation:sobe .55s cubic-bezier(.22,.9,.26,1) forwards}
+.slide.ativo .bolha:nth-child(1){animation-delay:.30s}
+.slide.ativo .bolha:nth-child(2){animation-delay:1.25s}
+@media (prefers-reduced-motion:reduce){
+  .cam,.lista li,.bolha{animation:none;opacity:1;transform:none}
+  .fundo{animation:none}
+}
+
+/* ───────── capa ───────── */
+.capa{position:absolute;inset:0;z-index:7;display:grid;place-items:center;
+  background:rgba(7,27,23,.55);backdrop-filter:blur(2px);text-align:center;padding:6cqw}
+.capa.off{display:none}
+.capa h1{font-family:var(--display);font-weight:700;font-size:4.6cqw;line-height:1.12;margin:0 0 1.6cqw;letter-spacing:-.02em}
+.capa h1 em{font-style:italic;color:var(--gold)}
+.capa p{font-size:1.8cqw;color:var(--soft);margin:0 0 3.4cqw}
+.play{
+  width:9cqw;height:9cqw;border-radius:50%;border:0;cursor:pointer;
+  background:var(--gold);display:grid;place-items:center;margin:0 auto;
+  box-shadow:0 1.4cqw 3cqw rgba(0,0,0,.4);transition:transform .18s ease;
+}
+.play:hover{transform:scale(1.07)}
+.play svg{width:3.4cqw;height:3.4cqw;margin-left:.6cqw;fill:#0A4C3F}
+.capa .dur{font-size:1.4cqw;color:var(--gold);margin-top:2.2cqw;letter-spacing:.06em}
+
+/* ───────── fim ───────── */
+.fim{position:absolute;inset:0;z-index:7;display:none;place-items:center;
+  background:rgba(7,27,23,.72);backdrop-filter:blur(3px);text-align:center;padding:6cqw}
+.fim.on{display:grid}
+.fim h2{font-family:var(--display);font-weight:700;font-size:4cqw;line-height:1.14;margin:0 0 1.4cqw}
+.fim h2 em{font-style:italic;color:var(--gold)}
+.fim p{font-size:1.8cqw;color:var(--soft);margin:0 0 3cqw}
+.btn{
+  display:inline-block;background:var(--gold);color:#0A4C3F;font-weight:700;
+  font-size:2cqw;text-decoration:none;padding:1.5cqw 3.4cqw;border-radius:.8cqw;
+  box-shadow:0 1.2cqw 2.6cqw rgba(0,0,0,.35);
+}
+.btn:hover{filter:brightness(1.05)}
+.rever{display:block;margin:2.2cqw auto 0;background:none;border:0;color:var(--gold);
+  font-family:var(--body);font-size:1.5cqw;cursor:pointer;text-decoration:underline;text-underline-offset:.3cqw}
+
+/* ───────── controles ───────── */
+.chrome{
+  position:absolute;left:0;right:0;bottom:0;z-index:6;
+  padding:5cqw 2.2cqw 1.5cqw;
+  background:linear-gradient(transparent,rgba(4,18,15,.80) 55%);
+  opacity:0;transition:opacity .25s ease;pointer-events:none;
+}
+.player:hover .chrome,.player.pausado .chrome,.chrome.fixo{opacity:1;pointer-events:auto}
+.trilho{height:.42cqw;min-height:4px;background:rgba(255,253,248,.22);border-radius:99px;cursor:pointer;position:relative}
+.trilho:hover{height:.62cqw}
+.preenche{position:absolute;inset:0 auto 0 0;width:0;background:var(--gold);border-radius:99px}
+.marcas{position:absolute;inset:0;pointer-events:none}
+.marcas i{position:absolute;top:0;bottom:0;width:2px;background:rgba(7,27,23,.55)}
+.linha{display:flex;align-items:center;gap:1.6cqw;margin-top:1.1cqw}
+.ctrl{background:none;border:0;color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0}
+.ctrl svg{width:2.4cqw;height:2.4cqw;fill:currentColor}
+.ctrl.sm svg{width:1.9cqw;height:1.9cqw}
+.tempo{font-size:1.35cqw;color:var(--soft);font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.espaco{flex:1}
+.rotulo{font-size:1.3cqw;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+
+@container (max-width:620px){
+  .slide{max-width:88cqw}
+  .grande{font-size:6cqw}
+  .nota{font-size:2.6cqw}
+  .eyebrow{font-size:2.1cqw}
+  .preco{font-size:16cqw}
+  .apoio{font-size:2.8cqw}
+  .lista,.lista.duas{max-width:86cqw;grid-template-columns:1fr}
+  .lista li{grid-template-columns:17cqw 1fr;font-size:2.3cqw;padding:1.4cqw 2cqw}
+  .lista .quando{font-size:1.8cqw}
+  .bolhas{max-width:80cqw}
+  .bolha{font-size:2.6cqw;padding:2.2cqw 2.6cqw}
+  .capa h1{font-size:6.4cqw}
+  .capa p,.fim p{font-size:2.9cqw}
+  .capa p{margin-bottom:7cqw}
+  .capa h1{margin-bottom:3cqw}
+  .fim h2{font-size:5.6cqw}
+  .btn{font-size:3cqw;padding:2.4cqw 5cqw}
+  .rever{font-size:2.4cqw}
+  .play{width:16cqw;height:16cqw}
+  .play svg{width:6cqw;height:6cqw}
+  .capa .dur{font-size:2.2cqw}
+  .tempo,.rotulo{font-size:2.2cqw}
+  .ctrl svg{width:4.4cqw;height:4.4cqw}
+  .ctrl.sm svg{width:3.6cqw;height:3.6cqw}
+  .selo{width:18cqw;height:18cqw;font-size:2.2cqw}
+  .selo b{font-size:6cqw}
+}
 </style>
 </head>
 <body>
-<div class="progresso" id="progresso"></div>
 
-<div class="palco" id="palco"></div>
+<div class="player" id="player">
+  <div class="fundo"></div>
+  <div class="grao"></div>
+  <div class="palco" id="palco"></div>
+  <div class="vinheta"></div>
 
-<div class="narracao" id="narracao"></div>
+  <div class="capa" id="capa">
+    <div>
+      <h1>Do primeiro “oi” até a <em>sessão marcada</em></h1>
+      <p>Para psicólogas e psicólogos que atendem no particular</p>
+      <button class="play" id="play" type="button" aria-label="Assistir">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <p class="dur" id="dur">apresentação de 2 minutos</p>
+    </div>
+  </div>
 
-<div class="barra">
-  <button id="anterior" type="button">← anterior</button>
-  <span id="contador">1 / 12</span>
-  <button id="proximo" type="button">próximo →</button>
-  <button id="auto" type="button">modo automático</button>
+  <div class="fim" id="fim">
+    <div>
+      <h2>A próxima mensagem <em>já vai chegar</em></h2>
+      <p>Você pode responder do jeito de sempre, ou com a cadência.</p>
+      <a class="btn" id="cta" href="#">Começar pelo Método 7 Dias</a>
+      <button class="rever" id="rever" type="button">assistir de novo</button>
+    </div>
+  </div>
+
+  <div class="chrome" id="chrome">
+    <div class="trilho" id="trilho">
+      <div class="preenche" id="preenche"></div>
+      <div class="marcas" id="marcas"></div>
+    </div>
+    <div class="linha">
+      <button class="ctrl" id="toggle" type="button" aria-label="Pausar">
+        <svg id="icone" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <span class="tempo"><span id="tAtual">0:00</span> / <span id="tTotal">0:00</span></span>
+      <span class="espaco"></span>
+      <span class="rotulo" id="rotulo"></span>
+      <button class="ctrl sm" id="tela" type="button" aria-label="Tela cheia">
+        <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+      </button>
+    </div>
+  </div>
 </div>
 
 <script>
-const CHECKOUT = "https://lastlink.com/p/CAE48DDBB/checkout-payment/";
+(function(){
+"use strict";
 
-const SLIDES = [
-  { eyebrow:"A mensagem de sempre",
-    html:'<div class="bolhas"><div class="bolha dela">Oi, boa noite. Quanto custa a sessão?</div></div>',
-    nota:"Se você atende no particular, provavelmente recebeu essa mensagem hoje ou ontem. O que você responde agora decide se essa pessoa vira paciente ou vira mais um contato que sumiu." },
+var CHECKOUT = "https://lastlink.com/p/CAE48DDBB/checkout-payment/";
+var PRECO = "67";
 
-  { eyebrow:"O que acontece depois",
-    html:'<h2 class="grande">Você manda o valor.<br>Ela visualiza.<br>E a conversa para ali.</h2>',
-    nota:"Os tiques ficam azuis e a conversa para. Três dias depois você pensa em mandar um oi, tudo bem, e desiste, porque parece insistência." },
+/* repassa utm/fbclid para o checkout */
+(function(){
+  try{
+    var q = new URLSearchParams(location.search), d = new URLSearchParams(), keep = 0;
+    ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","fbclid","gclid","src","sck"]
+      .forEach(function(k){ if(q.get(k)){ d.set(k,q.get(k)); keep=1; } });
+    d.set("origem","vsl");
+    CHECKOUT = CHECKOUT + (CHECKOUT.indexOf("?")>-1 ? "&" : "?") + d.toString();
+  }catch(e){}
+})();
+document.getElementById("cta").href = CHECKOUT;
 
-  { eyebrow:"Não é falta de competência",
-    html:'<h2 class="grande">A faculdade te preparou para a sessão.<br>A conversa antes dela ficou por sua conta.</h2>',
-    nota:"Você passou anos se preparando para os cinquenta minutos da sessão. A conversa que acontece antes dela, no WhatsApp, ninguém te ensinou." },
-
-  { eyebrow:"Quem está falando",
-    html:'<h2 class="grande">Eu vejo o outro lado da conversa.</h2>',
-    nota:"Sou o Anderson Gonçalves. Trabalho com tráfego pago e automação de WhatsApp, e passo boa parte do dia olhando o caminho entre o primeiro contato e o agendamento. Não sou psicólogo, e por isso enxergo o ponto exato em que a pessoa desiste." },
-
-  { eyebrow:"O que eu percebi",
-    html:'<h2 class="grande">Escuta antes de valor.</h2>',
-    nota:"Quem escreve para uma psicóloga quer ser ouvida antes de ouvir um preço. Organizei esse intervalo numa sequência de mensagens, cada uma com um momento e um propósito. Chamei de Método 7 Dias de Acolhimento." },
-
-  { eyebrow:"A cadência completa",
-    html:'<ul class="lista">'
-      + '<li><span class="quando">no mesmo minuto</span><span>Resposta que acolhe e pergunta o que pesa</span></li>'
-      + '<li><span class="quando">até 2 horas</span><span>Convite para os 20 minutos gratuitos</span></li>'
-      + '<li><span class="quando">1 hora antes</span><span>Lembrete que derruba a falta</span></li>'
-      + '<li><span class="quando">após a triagem</span><span>Resumo do plano, ainda sem valor</span></li>'
-      + '<li><span class="quando">2 horas depois</span><span>Proposta completa</span></li>'
-      + '<li><span class="quando">dia 1</span><span>Espaço para dúvidas</span></li>'
-      + '<li><span class="quando">dia 3</span><span>Um cuidado de presente</span></li>'
-      + '<li><span class="quando">dia 7</span><span>Porta aberta, no tempo dela</span></li>'
-      + '</ul>',
-    nota:"Oito mensagens dentro da janela em que a pessoa decide. Cada uma com um momento e um propósito." },
-
-  { eyebrow:"Nada escrito do zero",
-    html:'<div class="bolhas"><div class="bolha dela">Oi, boa noite. Quanto custa a sessão?</div>'
-      + '<div class="bolha sua">Oi, Mariana, que bom que você escreveu. Antes de falar de valores, me conta em uma frase: o que mais tem pesado pra você hoje?</div></div>',
-    nota:"Todas as mensagens vêm prontas. Você troca o nome e usa as palavras que a própria pessoa trouxe." },
-
-  { eyebrow:"Segurança",
-    html:'<h2 class="grande">Dentro do Código de Ética.</h2>',
-    nota:"Sem preço como chamariz, sem promessa de resultado e sem expor nenhum paciente." },
-
-  { eyebrow:"O que você recebe",
-    html:'<ul class="lista">'
-      + '<li><span class="quando">guia</span><span>Método 7 Dias com todos os scripts</span></li>'
-      + '<li><span class="quando">bônus 1</span><span>Kit Perfil Pronto</span></li>'
-      + '<li><span class="quando">bônus 2</span><span>Ficha de Triagem de 20 minutos</span></li>'
-      + '<li><span class="quando">bônus 3</span><span>Checklist de Divulgação Ética</span></li>'
-      + '<li><span class="quando">bônus 4</span><span>Pacote Anti-falta</span></li>'
-      + '<li><span class="quando">bônus 5</span><span>Planilha Funil de Pacientes</span></li>'
-      + '<li><span class="quando">bônus 6</span><span>Modelo de Termo e Onboarding</span></li>'
-      + '</ul>',
-    nota:"O guia com a cadência completa e seis ferramentas de aplicação, todas editáveis com seu nome e seu CRP." },
-
-  { eyebrow:"O investimento",
-    html:'<p class="preco">R$ 147</p><p class="apoio">no Pix ou em até 12x no cartão</p>',
-    nota:"Uma única paciente que começa com você e fica o primeiro mês já paga o método." },
-
-  { eyebrow:"O risco é meu",
-    html:'<div class="selo"><span><b>30</b>dias</span></div><h2 class="grande">30 dias para testar.</h2>',
-    nota:"Aplica a cadência nas suas próximas conversas. Se não fizer sentido, pede o reembolso pela plataforma e recebe cem por cento do valor, sem precisar explicar nada." },
-
-  { eyebrow:"Agora",
-    html:'<h2 class="grande">A próxima mensagem já vai chegar.</h2>'
-      + '<p class="apoio">Você pode responder do jeito de sempre, ou com o método.</p>'
-      + '<a class="btn" id="cta-final" href="' + CHECKOUT + '">Começar pelo Método 7 Dias</a>',
-    nota:"A próxima pessoa perguntando o valor da sessão já vai chegar. Clica no botão e começa hoje." }
-];
-
-const palco = document.getElementById('palco');
-const narracao = document.getElementById('narracao');
-const contador = document.getElementById('contador');
-const progresso = document.getElementById('progresso');
-
-palco.innerHTML = SLIDES.map((s, i) =>
-  '<section class="slide' + (i === 0 ? ' ativo' : '') + '" data-i="' + i + '">'
-  + '<p class="eyebrow">' + s.eyebrow + '</p>' + s.html + '</section>'
-).join('');
-
-let atual = 0;
-let timer = null;
-
-function mostrar(i){
-  atual = Math.max(0, Math.min(SLIDES.length - 1, i));
-  document.querySelectorAll('.slide').forEach(function(el, n){
-    el.classList.toggle('ativo', n === atual);
-  });
-  narracao.innerHTML = '<b>Narração do slide ' + (atual + 1) + '</b>' + SLIDES[atual].nota;
-  contador.textContent = (atual + 1) + ' / ' + SLIDES.length;
-  progresso.style.width = (((atual + 1) / SLIDES.length) * 100) + '%';
+function ev(nome, extra){
+  try{
+    window.dataLayer = window.dataLayer || [];
+    var o = {event:nome}; if(extra) for(var k in extra) o[k]=extra[k];
+    window.dataLayer.push(o);
+  }catch(e){}
 }
 
-document.getElementById('proximo').addEventListener('click', function(){ mostrar(atual + 1); });
-document.getElementById('anterior').addEventListener('click', function(){ mostrar(atual - 1); });
+var SLIDES = [
+ { eyebrow:"A mensagem de sempre",
+   html:'<div class="bolhas cam"><div class="bolha dela">Oi, boa noite. Quanto custa a sessão?</div></div>',
+   nota:"Se você atende no particular, recebeu essa mensagem hoje ou ontem. O que você responde agora decide se essa pessoa vira paciente ou vira mais um contato que sumiu." },
 
-document.getElementById('auto').addEventListener('click', function(){
-  if (timer) { clearInterval(timer); timer = null; this.textContent = 'modo automático'; return; }
-  this.textContent = 'parar';
-  timer = setInterval(function(){
-    if (atual >= SLIDES.length - 1) { clearInterval(timer); timer = null; return; }
-    mostrar(atual + 1);
-  }, 19000);
+ { eyebrow:"O que acontece depois",
+   html:'<h2 class="grande cam">Você manda o valor.<br>Ela visualiza.<br>E a conversa <em>para ali</em>.</h2>',
+   nota:"Os tiques ficam azuis e o silêncio começa. Três dias depois você pensa em mandar um oi, tudo bem, e desiste, porque parece insistência." },
+
+ { eyebrow:"Não é falta de competência",
+   html:'<h2 class="grande cam">A faculdade te preparou para a sessão.<br>A <em>conversa antes dela</em> ficou por sua conta.</h2>',
+   nota:"Você passou anos se preparando para os cinquenta minutos da sessão. A conversa que acontece antes dela, no WhatsApp, ninguém te ensinou." },
+
+ { eyebrow:"Quem está falando",
+   html:'<h2 class="grande cam">Eu vejo o <em>outro lado</em> da conversa.</h2>',
+   nota:"Sou o Anderson Gonçalves. Trabalho com tráfego pago e automação de WhatsApp, e passo o dia olhando o caminho entre o primeiro contato e o agendamento. Não sou psicólogo, e por isso enxergo o ponto exato em que a pessoa desiste." },
+
+ { eyebrow:"O que eu percebi",
+   html:'<h2 class="grande cam">Escuta <em>antes</em> de valor.</h2>',
+   nota:"Quem escreve para uma psicóloga quer ser ouvida antes de ouvir um preço. Organizei esse intervalo numa sequência de mensagens, cada uma com um momento e um propósito." },
+
+ { eyebrow:"A cadência completa",
+   html:'<ul class="lista duas">'
+     + '<li><span class="quando">no minuto</span><span>Resposta que acolhe e pergunta o que pesa</span></li>'
+     + '<li><span class="quando">até 2 horas</span><span>Convite para os 20 minutos gratuitos</span></li>'
+     + '<li><span class="quando">1 h antes</span><span>Lembrete que derruba a falta</span></li>'
+     + '<li><span class="quando">após triagem</span><span>Resumo do plano, ainda sem valor</span></li>'
+     + '<li><span class="quando">2 h depois</span><span>Proposta completa</span></li>'
+     + '<li><span class="quando">dia 1</span><span>Espaço para a dúvida real</span></li>'
+     + '<li><span class="quando">dia 3</span><span>Um cuidado de presente</span></li>'
+     + '<li><span class="quando">dia 7</span><span>Porta aberta, no tempo dela</span></li>'
+     + '</ul>',
+   nota:"Oito mensagens dentro da janela em que a pessoa decide." },
+
+ { eyebrow:"Nada escrito do zero",
+   html:'<div class="bolhas">'
+     + '<div class="bolha dela">Oi, boa noite. Quanto custa a sessão?</div>'
+     + '<div class="bolha sua">Oi, Mariana, que bom que você escreveu. Antes de falar de valores, me conta em uma frase: o que mais tem pesado pra você hoje?</div></div>',
+   nota:"Todas as mensagens vêm prontas. Você troca o nome e usa as palavras que a própria pessoa trouxe." },
+
+ { eyebrow:"Segurança",
+   html:'<h2 class="grande cam">Dentro do <em>Código de Ética</em>.</h2>',
+   nota:"Sem preço como chamariz, sem promessa de resultado e sem expor nenhum paciente." },
+
+ { eyebrow:"O que você recebe",
+   html:'<ul class="lista duas">'
+     + '<li><span class="quando">guia</span><span>Método 7 Dias com todos os scripts</span></li>'
+     + '<li><span class="quando">bônus 1</span><span>Kit Perfil Pronto</span></li>'
+     + '<li><span class="quando">bônus 2</span><span>Ficha de Triagem de 20 minutos</span></li>'
+     + '<li><span class="quando">bônus 3</span><span>Checklist de Divulgação Ética</span></li>'
+     + '<li><span class="quando">bônus 4</span><span>Pacote Anti-falta</span></li>'
+     + '<li><span class="quando">bônus 5</span><span>Planilha Funil de Pacientes</span></li>'
+     + '<li><span class="quando">bônus 6</span><span>Modelo de Termo e Onboarding</span></li>'
+     + '</ul>',
+   nota:"O guia com a cadência completa e seis ferramentas, todas editáveis com seu nome e seu CRP." },
+
+ { eyebrow:"O investimento",
+   html:'<p class="preco cam"><small>R$</small>' + PRECO + '</p>'
+     + '<p class="apoio cam">no Pix ou parcelado no cartão</p>',
+   nota:"Uma única paciente que começa com você e fica o primeiro mês já paga o método várias vezes." },
+
+ { eyebrow:"O risco é meu",
+   html:'<div class="cam"><span class="selo"><span><b>30</b>dias</span></span></div>'
+     + '<h2 class="grande cam">Trinta dias para <em>testar</em>.</h2>',
+   nota:"Aplica a cadência nas suas próximas conversas. Se não fizer sentido, pede o reembolso pela plataforma e recebe tudo de volta, sem precisar explicar nada." },
+
+ { eyebrow:"Agora",
+   html:'<h2 class="grande cam">A próxima mensagem <em>já vai chegar</em>.</h2>',
+   nota:"Alguém vai perguntar o valor da sua sessão esta semana. Você decide como essa conversa termina." }
+];
+
+/* ── duração por tempo de leitura ── */
+function textoDe(s){
+  var d = document.createElement("div");
+  d.innerHTML = s.html;
+  return (s.eyebrow + " " + d.textContent + " " + s.nota).replace(/\s+/g," ").trim();
+}
+var LEITURA = 60/165;            // segundos por palavra
+var durs = SLIDES.map(function(s){
+  var n = textoDe(s).split(" ").length;
+  var t = 2.0 + n * LEITURA;     // respiro da animação + leitura
+  return Math.min(12, Math.max(5, t));
+});
+var inicios = [], acc = 0;
+durs.forEach(function(d){ inicios.push(acc); acc += d; });
+var TOTAL = acc;
+
+var palco    = document.getElementById("palco");
+var player   = document.getElementById("player");
+var capa     = document.getElementById("capa");
+var fim      = document.getElementById("fim");
+var chrome   = document.getElementById("chrome");
+var trilho   = document.getElementById("trilho");
+var preenche = document.getElementById("preenche");
+var marcas   = document.getElementById("marcas");
+var icone    = document.getElementById("icone");
+var tAtual   = document.getElementById("tAtual");
+var tTotal   = document.getElementById("tTotal");
+var rotulo   = document.getElementById("rotulo");
+
+palco.innerHTML = SLIDES.map(function(s,i){
+  return '<section class="slide" data-i="'+i+'">'
+       + '<p class="eyebrow cam">'+s.eyebrow+'</p>'
+       + s.html
+       + '<p class="nota cam">'+s.nota+'</p>'
+       + '</section>';
+}).join("");
+var secoes = palco.querySelectorAll(".slide");
+
+marcas.innerHTML = inicios.slice(1).map(function(t){
+  return '<i style="left:'+((t/TOTAL)*100)+'%"></i>';
+}).join("");
+
+function mmss(s){
+  s = Math.max(0, Math.round(s));
+  return Math.floor(s/60) + ":" + String(s%60).padStart(2,"0");
+}
+tTotal.textContent = mmss(TOTAL);
+document.getElementById("dur").textContent =
+  "apresentação de " + Math.round(TOTAL/60) + " minuto" + (Math.round(TOTAL/60)>1?"s":"");
+
+var t = 0, rodando = false, ultimo = 0, slideAtual = -1, marcos = {};
+
+function pintaSlide(i){
+  if(i === slideAtual) return;
+  slideAtual = i;
+  secoes.forEach(function(el,n){
+    el.classList.remove("ativo");
+    if(n === i){ void el.offsetWidth; el.classList.add("ativo"); }
+  });
+  rotulo.textContent = (i+1) + " de " + SLIDES.length;
+}
+
+function indicePara(tempo){
+  for(var i = inicios.length - 1; i >= 0; i--){ if(tempo >= inicios[i]) return i; }
+  return 0;
+}
+
+function pinta(){
+  preenche.style.width = Math.min(100,(t/TOTAL)*100) + "%";
+  tAtual.textContent = mmss(t);
+  pintaSlide(indicePara(t));
+}
+
+function marcosDeVista(){
+  [25,50,75].forEach(function(p){
+    if(!marcos[p] && (t/TOTAL)*100 >= p){ marcos[p] = 1; ev("vsl_progresso",{percentual:p}); }
+  });
+}
+
+function loop(ts){
+  if(!rodando) return;
+  if(!ultimo) ultimo = ts;
+  t += (ts - ultimo)/1000;
+  ultimo = ts;
+  if(t >= TOTAL){ t = TOTAL; pinta(); return terminar(); }
+  pinta(); marcosDeVista();
+  requestAnimationFrame(loop);
+}
+
+function tocar(){
+  if(rodando) return;
+  if(t >= TOTAL){ t = 0; marcos = {}; }
+  fim.classList.remove("on");
+  rodando = true; ultimo = 0;
+  player.classList.remove("pausado");
+  icone.innerHTML = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+  document.getElementById("toggle").setAttribute("aria-label","Pausar");
+  requestAnimationFrame(loop);
+}
+
+function pausar(){
+  if(!rodando) return;
+  rodando = false;
+  player.classList.add("pausado");
+  icone.innerHTML = '<path d="M8 5v14l11-7z"/>';
+  document.getElementById("toggle").setAttribute("aria-label","Reproduzir");
+}
+
+function terminar(){
+  rodando = false;
+  player.classList.add("pausado");
+  icone.innerHTML = '<path d="M8 5v14l11-7z"/>';
+  fim.classList.add("on");
+  if(!marcos[100]){ marcos[100] = 1; ev("vsl_progresso",{percentual:100}); ev("vsl_fim"); }
+}
+
+/* ── interações ── */
+document.getElementById("play").addEventListener("click", function(e){
+  e.stopPropagation();
+  capa.classList.add("off");
+  ev("vsl_play");
+  tocar();
 });
 
-document.addEventListener('keydown', function(e){
-  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); mostrar(atual + 1); }
-  if (e.key === 'ArrowLeft') { mostrar(atual - 1); }
+document.getElementById("toggle").addEventListener("click", function(e){
+  e.stopPropagation();
+  rodando ? pausar() : tocar();
 });
 
-mostrar(0);
+player.addEventListener("click", function(e){
+  if(capa.classList.contains("off") === false) return;
+  if(e.target.closest(".chrome") || e.target.closest(".fim")) return;
+  rodando ? pausar() : tocar();
+});
+
+trilho.addEventListener("click", function(e){
+  e.stopPropagation();
+  var r = trilho.getBoundingClientRect();
+  t = Math.max(0, Math.min(TOTAL, ((e.clientX - r.left)/r.width) * TOTAL));
+  if(t < TOTAL) fim.classList.remove("on");
+  slideAtual = -1;
+  pinta();
+  if(!rodando && t < TOTAL) tocar(); else ultimo = 0;
+});
+
+document.getElementById("rever").addEventListener("click", function(e){
+  e.stopPropagation();
+  t = 0; marcos = {}; slideAtual = -1;
+  fim.classList.remove("on");
+  pinta(); tocar();
+  ev("vsl_rever");
+});
+
+document.getElementById("cta").addEventListener("click", function(){
+  ev("clique_cta",{origem:"vsl", segundo:Math.round(t)});
+});
+
+document.getElementById("tela").addEventListener("click", function(e){
+  e.stopPropagation();
+  if(document.fullscreenElement){ document.exitFullscreen(); }
+  else if(player.requestFullscreen){ player.requestFullscreen(); }
+});
+document.addEventListener("fullscreenchange", function(){
+  player.classList.toggle("cheio", !!document.fullscreenElement);
+});
+
+document.addEventListener("keydown", function(e){
+  if(e.key === " " || e.key === "k"){ e.preventDefault(); rodando ? pausar() : tocar(); }
+  if(e.key === "ArrowRight"){ e.preventDefault(); var i = Math.min(SLIDES.length-1, indicePara(t)+1); t = inicios[i]; slideAtual=-1; pinta(); ultimo=0; }
+  if(e.key === "ArrowLeft"){ e.preventDefault(); var j = Math.max(0, indicePara(t)-1); t = inicios[j]; slideAtual=-1; pinta(); ultimo=0; }
+  if(e.key === "f"){ document.getElementById("tela").click(); }
+});
+
+/* pausa quando sai da tela */
+if("IntersectionObserver" in window){
+  new IntersectionObserver(function(es){
+    es.forEach(function(x){ if(!x.isIntersecting && rodando) pausar(); });
+  },{threshold:.35}).observe(player);
+}
+
+pinta();
+
+/* ?autoplay=1 começa sozinho, sem a capa */
+if(new URLSearchParams(location.search).get("autoplay") === "1"){
+  capa.classList.add("off");
+  ev("vsl_play",{auto:1});
+  tocar();
+}
+})();
 </script>
 </body>
 </html>
