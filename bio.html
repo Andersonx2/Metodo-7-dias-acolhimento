@@ -2,20 +2,24 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Sessão Zero · Marketing para psicólogas</title>
-<meta name="description" content="Materiais e sistemas para organizar a conversa que acontece antes da primeira sessão. Método 7 Dias de Acolhimento e Serenity.">
+<meta name="description" content="Materiais e sistemas para organizar a conversa que acontece antes da primeira sessão.">
+<meta name="theme-color" content="#0C2620">
 <meta name="robots" content="noindex, follow">
-<meta property="og:title" content="Sessão Zero · Marketing para psicólogas">
-<meta property="og:description" content="Materiais e sistemas para organizar a conversa que acontece antes da primeira sessão.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://metodo-7-dias-acolhimento.vercel.app/bio">
 <link rel="canonical" href="https://metodo-7-dias-acolhimento.vercel.app/bio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sessão Zero">
+<meta property="og:description" content="Marketing para psicólogas. Comece pelo Método 7 Dias de Acolhimento.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://metodo-7-dias-acolhimento.vercel.app/bio">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E6B57'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='600' fill='%23E8D4A4' text-anchor='middle'%3E0%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: coluna única centrada, um card de destaque seguido de uma pilha de links */
+/* Layout: uma tela de celular. Card de destaque, uma linha de produtos e
+   uma linha de perfis. Nada de rolagem longa. */
 :root{
   --verde-fundo:#0C2620;
   --verde-topo:#15705C;
@@ -28,7 +32,7 @@
   --dourado-escuro:#C9A961;
   --serif:'Lora','Iowan Old Style',Georgia,serif;
   --sans:'Inter','Helvetica Neue',Arial,sans-serif;
-  color-scheme: dark;
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 body{
@@ -42,174 +46,172 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 .wrap{
-  max-width:34rem;
-  margin:0 auto;
+  max-width:30rem;margin:0 auto;
   padding-left:max(16px, env(safe-area-inset-left, 0px));
   padding-right:max(16px, env(safe-area-inset-right, 0px));
-  padding-block:calc(3.5rem + env(safe-area-inset-top, 0px)) calc(3rem + env(safe-area-inset-bottom, 0px));
-  display:flex;
-  flex-direction:column;
-  gap:2.25rem;
+  padding-block:1.75rem 1.5rem;
+  display:flex;flex-direction:column;gap:1.25rem;
 }
 
 /* cabeçalho */
-.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.9rem}
+.head{display:flex;align-items:center;gap:.9rem}
 .mark{
-  width:88px;height:88px;border-radius:50%;
+  flex:none;width:52px;height:52px;border-radius:50%;
   display:grid;place-items:center;
-  font-family:var(--serif);font-size:2.6rem;font-weight:600;
-  color:var(--dourado);
-  background:rgba(232,212,164,.10);
+  font-family:var(--serif);font-size:1.6rem;font-weight:600;
+  color:var(--dourado);background:rgba(232,212,164,.10);
   border:1px solid var(--verde-linha);
 }
-.nome{font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:-.01em;margin:0;text-wrap:balance}
-.papel{font-size:.78rem;font-weight:600;letter-spacing:.22em;color:var(--dourado);margin:0;text-transform:uppercase}
-.linha{font-size:1rem;line-height:1.6;color:var(--creme-suave);margin:0;max-width:26rem;text-wrap:balance}
+.head .texto{min-width:0}
+.papel{font-size:.66rem;font-weight:700;letter-spacing:.2em;color:var(--dourado);margin:0 0 .2rem;text-transform:uppercase}
+.nome{font-family:var(--serif);font-size:1.3rem;font-weight:600;line-height:1.2;margin:0}
+.linha{font-size:.9rem;line-height:1.5;color:var(--creme-suave);margin:0}
 
 /* destaque */
 .destaque{
   display:block;text-decoration:none;color:inherit;
-  background:var(--verde-card);
-  border:1px solid var(--verde-linha);
-  border-radius:22px;
-  padding:1.6rem 1.5rem 1.5rem;
+  background:var(--verde-card);border:1px solid var(--verde-linha);
+  border-radius:20px;padding:1.1rem 1.15rem 1.15rem;
   transition:border-color .18s ease, transform .18s ease;
 }
 .destaque:hover,.destaque:focus-visible{border-color:var(--dourado);transform:translateY(-2px)}
 .tag{
-  display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.18em;
+  display:inline-block;font-size:.63rem;font-weight:700;letter-spacing:.16em;
   text-transform:uppercase;color:#14322B;background:var(--dourado);
-  padding:.35rem .7rem;border-radius:999px;margin-bottom:1rem;
+  padding:.28rem .6rem;border-radius:999px;margin-bottom:.7rem;
 }
-.destaque h2{font-family:var(--serif);font-size:1.6rem;line-height:1.2;font-weight:600;margin:0 0 .6rem;text-wrap:balance}
-.destaque p{font-size:.95rem;line-height:1.6;color:var(--creme-suave);margin:0}
-.meta{
-  display:flex;flex-wrap:wrap;gap:.45rem;margin:1.1rem 0 1.3rem;
-  font-size:.8rem;color:var(--creme-suave);
-}
-.meta span{border:1px solid var(--verde-linha);border-radius:999px;padding:.35rem .75rem}
+.destaque h2{font-family:var(--serif);font-size:1.25rem;line-height:1.25;font-weight:600;margin:0 0 .4rem}
+.destaque p{font-size:.88rem;line-height:1.5;color:var(--creme-suave);margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:.35rem;margin:.8rem 0 .9rem;font-size:.72rem;color:var(--creme-suave)}
+.meta span{border:1px solid var(--verde-linha);border-radius:999px;padding:.28rem .6rem}
 .meta b{color:var(--dourado);font-weight:700}
 .botao{
-  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  display:flex;align-items:center;justify-content:center;gap:.4rem;
   background:var(--dourado);color:#14322B;
-  font-size:1rem;font-weight:700;
-  padding:.95rem 1.25rem;border-radius:999px;
+  font-size:.95rem;font-weight:700;padding:.8rem 1rem;border-radius:999px;
 }
-.garantia{font-size:.78rem;color:var(--creme-fraco);text-align:center;margin:.75rem 0 0}
+.garantia{font-size:.72rem;color:var(--creme-fraco);text-align:center;margin:.6rem 0 0}
 
-/* grupos de links */
-.grupo{display:flex;flex-direction:column;gap:.7rem}
-.rotulo{
-  font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--creme-fraco);margin:0 0 .15rem .15rem;
-}
+/* linhas de itens */
+.grupo{display:flex;flex-direction:column;gap:.5rem}
+.rotulo{font-size:.63rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--creme-fraco);margin:0 0 .1rem .1rem}
 .item{
-  display:flex;align-items:center;gap:1rem;
+  display:flex;align-items:center;gap:.8rem;
   text-decoration:none;color:inherit;
-  border:1px solid var(--verde-linha);border-radius:16px;
-  padding:1rem 1.15rem;
+  border:1px solid var(--verde-linha);border-radius:14px;padding:.7rem .85rem;
   transition:border-color .18s ease, background .18s ease;
 }
 .item:hover,.item:focus-visible{border-color:var(--dourado);background:rgba(232,212,164,.06)}
 .item.inerte{cursor:default}
 .item.inerte:hover{border-color:var(--verde-linha);background:none}
 .icone{
-  flex:none;width:40px;height:40px;border-radius:11px;
-  display:grid;place-items:center;
+  flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
   background:rgba(232,212,164,.10);color:var(--dourado);
-  font-family:var(--serif);font-size:1.15rem;font-weight:600;
+  font-family:var(--serif);font-size:.95rem;font-weight:600;
 }
-.texto{min-width:0;display:flex;flex-direction:column;gap:.15rem}
-.texto strong{font-size:1rem;font-weight:600;line-height:1.3}
-.texto small{font-size:.83rem;line-height:1.45;color:var(--creme-suave)}
+.texto{min-width:0;display:flex;flex-direction:column}
+.texto strong{font-size:.92rem;font-weight:600;line-height:1.3}
+.texto small{font-size:.76rem;line-height:1.4;color:var(--creme-suave)}
 .pin{
-  flex:none;margin-left:auto;font-size:.65rem;font-weight:700;letter-spacing:.14em;
+  flex:none;margin-left:auto;font-size:.6rem;font-weight:700;letter-spacing:.12em;
   text-transform:uppercase;color:var(--dourado-escuro);
-  border:1px solid var(--verde-linha);border-radius:999px;padding:.3rem .6rem;
+  border:1px solid var(--verde-linha);border-radius:999px;padding:.25rem .5rem;
 }
-.seta{flex:none;margin-left:auto;color:var(--creme-fraco);font-size:1.1rem;line-height:1}
+.dupla{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.dupla .item{gap:.6rem;padding:.65rem .7rem}
+.dupla .texto small{font-size:.7rem}
 
 /* rodapé */
-footer{
-  border-top:1px solid var(--verde-linha);
-  padding-top:1.5rem;text-align:center;
-  display:flex;flex-direction:column;gap:.45rem;
-}
-footer p{margin:0;font-size:.78rem;line-height:1.6;color:var(--creme-fraco)}
+footer{border-top:1px solid var(--verde-linha);padding-top:.9rem;text-align:center}
+footer p{margin:0 0 .3rem;font-size:.72rem;line-height:1.5;color:var(--creme-fraco)}
+footer p:last-child{margin:0}
 footer a{color:var(--creme-suave);text-decoration:none;border-bottom:1px solid var(--verde-linha)}
 footer a:hover{color:var(--dourado)}
-
 a:focus-visible{outline:2px solid var(--dourado);outline-offset:3px}
-@media (prefers-reduced-motion: reduce){*{transition:none!important}}
-@media (max-width:420px){
-  .nome{font-size:1.7rem}
-  .destaque h2{font-size:1.38rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:360px){
+  .dupla{grid-template-columns:1fr}
+  .nome{font-size:1.2rem}
 }
 </style>
 </head>
 <body>
+
 <div class="wrap">
 
   <header class="head">
     <div class="mark" aria-hidden="true">0</div>
-    <p class="papel">Sessão Zero</p>
-    <h1 class="nome">Marketing para psicólogas</h1>
-    <p class="linha">Materiais e sistemas para organizar a conversa que acontece antes da primeira sessão, do primeiro oi até o horário marcado.</p>
+    <div class="texto">
+      <p class="papel">Sessão Zero</p>
+      <h1 class="nome">Marketing para psicólogas</h1>
+    </div>
   </header>
 
-  <a class="destaque" href="/">
+  <p class="linha">Materiais e sistemas para organizar a conversa que acontece antes da primeira sessão.</p>
+
+  <a class="destaque js-cta" data-cta="bio-destaque" href="/?utm_source=instagram&amp;utm_medium=bio&amp;utm_campaign=sessao-zero">
     <span class="tag">Comece por aqui</span>
     <h2>Método 7 Dias de Acolhimento</h2>
-    <p>A cadência de 8 mensagens para atender quem chega no WhatsApp, com os textos prontos para copiar, a ficha de triagem e a planilha de funil.</p>
+    <p>A cadência de 8 mensagens para atender quem chega no WhatsApp, com os textos prontos, a ficha de triagem e a planilha de funil.</p>
     <div class="meta">
       <span><b>7</b> materiais</span>
-      <span><b>8</b> mensagens prontas</span>
+      <span><b>8</b> mensagens</span>
       <span><b>1h</b> para aplicar</span>
     </div>
     <div class="botao">Quero o método <span aria-hidden="true">→</span></div>
-    <p class="garantia">Acesso imediato · 30 dias de garantia</p>
+    <p class="garantia">R$ 67,00 à vista · acesso imediato · 30 dias de garantia</p>
   </a>
 
-  <section class="grupo">
-    <p class="rotulo">Outros produtos</p>
-
+  <div class="grupo">
     <div class="item inerte">
       <div class="icone" aria-hidden="true">S</div>
       <div class="texto">
         <strong>Serenity</strong>
-        <small>Sistema de gestão para psicólogas: agenda, pacientes, notas com IA e financeiro.</small>
+        <small>Agenda, pacientes, notas com IA e financeiro.</small>
       </div>
       <span class="pin">Em breve</span>
     </div>
-  </section>
+  </div>
 
-  <section class="grupo">
+  <div class="grupo">
     <p class="rotulo">Onde eu publico</p>
-
-    <a class="item" href="https://www.instagram.com/sessaozero.psi/" target="_blank" rel="noopener">
-      <div class="icone" aria-hidden="true">IG</div>
-      <div class="texto">
-        <strong>Instagram</strong>
-        <small>@sessaozero.psi</small>
-      </div>
-      <span class="seta" aria-hidden="true">→</span>
-    </a>
-
-    <a class="item" href="https://www.facebook.com/7diasdeacolhimento" target="_blank" rel="noopener">
-      <div class="icone" aria-hidden="true">FB</div>
-      <div class="texto">
-        <strong>Facebook</strong>
-        <small>Página do Método 7 Dias de Acolhimento</small>
-      </div>
-      <span class="seta" aria-hidden="true">→</span>
-    </a>
-  </section>
+    <div class="dupla">
+      <a class="item js-cta" data-cta="bio-instagram" href="https://www.instagram.com/sessaozero.psi/">
+        <div class="icone" aria-hidden="true">IG</div>
+        <div class="texto"><strong>Instagram</strong><small>@sessaozero.psi</small></div>
+      </a>
+      <a class="item js-cta" data-cta="bio-facebook" href="https://www.facebook.com/7diasdeacolhimento">
+        <div class="icone" aria-hidden="true">FB</div>
+        <div class="texto"><strong>Facebook</strong><small>Método 7 Dias</small></div>
+      </a>
+    </div>
+  </div>
 
   <footer>
-    <p>Material de apoio profissional para psicólogas e psicólogos. Não substitui formação clínica, supervisão ou as normas do Conselho Federal de Psicologia.</p>
-    <p>Freedom Pulse · Pagamentos processados pela <a href="https://lastlink.com/" target="_blank" rel="noopener">Lastlink</a></p>
+    <p>Material de apoio profissional. Não substitui formação clínica, supervisão ou as normas do Conselho Federal de Psicologia.</p>
+    <p>Freedom Pulse · Pagamentos pela <a href="https://lastlink.com/" rel="noopener">Lastlink</a></p>
   </footer>
 
 </div>
+
+<script>
+/* Mesmo contêiner do GTM da LP, para medir clique na bio e atribuir a origem. */
+(function(){
+  var id = 'GTM-TKW5TWQT';
+  var dl = window.dataLayer = window.dataLayer || [];
+  dl.push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+  var f = document.getElementsByTagName('script')[0];
+  var j = document.createElement('script');
+  j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+  f.parentNode.insertBefore(j, f);
+  dl.push({event:'ver_pagina_bio', pagina:'sessao-zero-bio'});
+  document.querySelectorAll('.js-cta').forEach(function(el){
+    el.addEventListener('click', function(){
+      dl.push({event:'clique_bio', destino: el.getAttribute('data-cta') || 'bio'});
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
