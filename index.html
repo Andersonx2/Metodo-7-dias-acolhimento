@@ -3,22 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Voce sabe conduzir a sessao. O que trava e a conversa antes dela. Cadencia de 8 mensagens com textos prontos, triagem estruturada e linguagem alinhada ao Codigo de Etica. Para psicologas e psicologos.">
+<meta name="description" content="Transforme o quanto custa do WhatsApp em paciente agendada e paga. Cadencia de 8 mensagens prontas, conversa inicial estruturada e linguagem alinhada ao Codigo de Etica. Para psicologas e psicologos.">
 <meta name="theme-color" content="#0B5345">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Metodo 7 Dias de Acolhimento">
-<meta property="og:description" content="Voce sabe conduzir a sessao. O que trava e a conversa antes dela.">
+<meta property="og:description" content="8 mensagens prontas para transformar o quanto custa do WhatsApp em paciente agendada e paga.">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E6B57'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23E8D4A4' text-anchor='middle'%3E7%3C/text%3E%3C/svg%3E">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%;height:auto}</style>
-</head>
-<body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKW5TWQT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <title>Método 7 Dias de Acolhimento</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKW5TWQT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <style>
 /* Layout: coluna narrativa única, com barra de CTA fixa no rodapé e a linha
@@ -47,25 +46,13 @@
   --font-mono:"Inter","Helvetica Neue",Arial,sans-serif;
   --maxw:720px;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0B1714; --surface:#11211C; --surface-2:#17302A; --ink:#F2EDE2;
-    --muted:#9DB3AA; --line:#24413A; --accent:#43C3A0; --accent-ink:#06211B;
-    --accent-soft:#113029; --gold:#D6B776; --gold-soft:#2B2416; --alert:#E08A63;
-    --deep:#081F1A;
-    --deep-grad:radial-gradient(760px 560px at 84% 12%, rgba(214,183,118,.14), transparent 62%),radial-gradient(620px 520px at 0% 100%, rgba(255,255,255,.05), transparent 66%),linear-gradient(122deg,#071B17 0%,#0B2E27 55%,#07201B 100%);
-    --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.4);
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0B1714; --surface:#11211C; --surface-2:#17302A; --ink:#F2EDE2;
-    --muted:#9DB3AA; --line:#24413A; --accent:#43C3A0; --accent-ink:#06211B;
-    --accent-soft:#113029; --gold:#D6B776; --gold-soft:#2B2416; --alert:#E08A63;
-    --deep:#081F1A;
-    --deep-grad:radial-gradient(760px 560px at 84% 12%, rgba(214,183,118,.14), transparent 62%),radial-gradient(620px 520px at 0% 100%, rgba(255,255,255,.05), transparent 66%),linear-gradient(122deg,#071B17 0%,#0B2E27 55%,#07201B 100%);
-    --shadow:0 1px 2px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.4);
-    color-scheme:dark;
+/* Tema claro fixo: a página de vendas não acompanha o modo escuro do celular. */
+:root{color-scheme:light}
+/* Cor única de conversão: dourado-âmbar, complementar ao verde da marca. */
+:root{
+  --cta:#E0A83A;
+  --cta-hover:#E8B651;
+  --cta-ink:#14322B;
 }
 
 *{box-sizing:border-box}
@@ -106,13 +93,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--accent);color:var(--accent-ink);
+  background:var(--cta);color:var(--cta-ink);
   font-family:var(--font-body);font-weight:700;font-size:16px;
   text-decoration:none;border:0;border-radius:10px;
   padding:15px 24px;line-height:1.2;text-align:center;
   box-shadow:var(--shadow);transition:transform .15s ease, filter .15s ease;
 }
-.btn:hover{filter:brightness(1.07)}
+.btn:hover{background:var(--cta-hover)}
 .btn:active{transform:translateY(1px)}
 .btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .btn-sm{padding:9px 15px;font-size:14px;border-radius:8px}
@@ -269,7 +256,8 @@ footer p{font-size:13px;color:var(--muted);line-height:1.55}
 .hero .price-inline b{color:var(--on-deep)}
 .hero .selo-item{background:rgba(255,255,255,.09);border-color:rgba(232,212,164,.42);color:var(--on-deep-soft)}
 .hero .selo-item b{color:var(--on-deep)}
-.hero .btn{background:var(--on-deep-gold);color:#143D33;box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.hero .btn{background:var(--cta);color:var(--cta-ink);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.hero .btn:hover{background:var(--cta-hover)}
 .hero .btn:focus-visible{outline-color:#FFFDF8}
 .hero a{color:var(--on-deep-gold)}
 .hero .small.center a{border-bottom:1px solid rgba(232,212,164,.45);text-decoration:none;padding-bottom:1px}
@@ -333,6 +321,78 @@ h2 em{font-style:italic;color:var(--gold)}
 .day .n b{font-weight:700;font-family:var(--font-display)}
 .price .big{letter-spacing:-.03em}
 
+/* ── Celular no hero: a conversa que termina em sessão confirmada ── */
+.phone{
+  justify-self:center;width:100%;max-width:330px;background:#FFFDF8;color:#14322B;
+  border-radius:30px;padding:14px 12px 16px;border:6px solid #0A3B31;
+  box-shadow:0 26px 60px rgba(0,0,0,.38);display:flex;flex-direction:column;gap:8px;position:relative;
+}
+.phone .head{display:flex;align-items:center;gap:9px;padding:2px 6px 10px;border-bottom:1px solid #E3DACA}
+.phone .avatar{width:30px;height:30px;border-radius:50%;background:#DCEBE4;color:#0E6B57;display:grid;place-items:center;font-size:12px;font-weight:600;flex:none}
+.phone .who{font-size:13.5px;font-weight:700;line-height:1.25}
+.phone .who span{display:block;font-weight:400;font-size:11.5px;color:#2E8A5F}
+.phone .bubble{font-size:13.5px}
+.phone .bubble.them{background:#EFE8DA}
+.phone .bubble.me{background:#DCEBE4}
+.phone .bubble time{color:#5B6F67}
+.phone .ok{align-self:center;display:inline-flex;align-items:center;gap:7px;margin-top:4px;
+  background:#0E6B57;color:#FFFDF8;border-radius:999px;padding:7px 13px;font-size:12.5px;font-weight:600}
+.phone .ok::before{content:"";width:9px;height:5px;border-left:2px solid #E8D4A4;border-bottom:2px solid #E8D4A4;transform:rotate(-45deg) translateY(-1px)}
+.phone .tag{position:absolute;right:-10px;top:-14px;background:#D6B776;color:#143D33;border-radius:999px;
+  padding:7px 13px;font-size:12.5px;font-weight:700;transform:rotate(3deg);box-shadow:0 10px 22px rgba(0,0,0,.3)}
+@media (min-width:880px){.hero .phone{grid-column:2;grid-row:1}}
+
+/* ── A conta: valores em dourado, perda em terracota ── */
+.money-big{font-family:var(--font-display);font-weight:700;color:var(--gold);white-space:nowrap}
+.loss{color:var(--alert);font-weight:700;white-space:nowrap}
+.calc{display:grid;gap:14px}
+.calc .fields{display:grid;gap:14px 12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.calc .fields .field:first-child{grid-column:1 / -1}
+@media (min-width:620px){.calc .fields{grid-template-columns:repeat(3,minmax(0,1fr))}.calc .fields .field:first-child{grid-column:auto}}
+.calc .field{display:grid;grid-template-rows:auto auto auto;gap:6px;min-width:0}
+.calc .lbl{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.calc .hint{font-size:12.5px;color:var(--muted);line-height:1.3}
+.calc .box{
+  display:flex;align-items:center;gap:6px;height:52px;padding:0 14px;
+  background:var(--bg);border:1.5px solid var(--line);border-radius:10px;
+}
+.calc .box:focus-within{border-color:var(--accent);outline:3px solid var(--gold-soft)}
+.calc .pre{font-size:16px;font-weight:600;color:var(--muted);flex:none}
+.calc input{
+  font:inherit;font-size:19px;font-weight:600;color:var(--ink);background:transparent;
+  border:0;outline:0;padding:0;width:100%;min-width:0;height:100%;-moz-appearance:textfield;
+}
+.calc input::-webkit-outer-spin-button,.calc input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.calc input::placeholder{color:#B5AE9F}
+.calc .result{display:grid;gap:10px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+@media (min-width:620px){.calc .result{gap:12px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}}
+.calc .res{display:flex;flex-direction:column;gap:4px;border-radius:12px;padding:14px 14px;min-width:0}
+@media (min-width:620px){.calc .res{padding:16px 18px}}
+@media (max-width:619px){.calc .res-lbl{font-size:10px;letter-spacing:.06em}.calc .res-note{font-size:13px}.calc .res b{font-size:26px}.calc .res b.vazio{font-size:15px}}
+.calc .res-loss{background:#F6E6DD;border:1px solid #EBCDBD}
+.calc .res-gain{background:var(--gold-soft);border:1px solid #E6D3A6}
+.calc .res-lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.calc .res b{font-family:var(--font-display);font-weight:700;line-height:1.1;font-size:clamp(28px,5vw,36px)}
+.calc .res-loss b{color:var(--alert)}
+.calc .res-gain b{color:var(--gold)}
+.calc .res-note{font-size:14px;color:var(--ink);line-height:1.4}
+.calc .res b.vazio{font-size:18px;font-family:var(--font-body);font-weight:600}
+.highlight{
+  background:var(--gold-soft);border:1px solid #E6D3A6;border-radius:14px;padding:18px 20px;
+  font-family:var(--font-display);font-size:clamp(18px,3vw,21px);font-weight:600;line-height:1.35;text-align:center;
+}
+.highlight b{color:var(--gold)}
+
+/* ── Antes e depois da cadência ── */
+.compare{display:grid;gap:16px}
+@media (min-width:760px){.compare{grid-template-columns:1fr 1fr;align-items:start}}
+.compare .label{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.compare .label.bad{color:var(--alert)}
+.compare .label.good{color:var(--accent)}
+.thread .who span.online{color:#2E8A5F}
+.confirmed{align-self:center;text-align:center;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-top:6px;font-weight:600}
+.day .n.pause{border-style:dashed;background:var(--surface-2)}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
@@ -375,39 +435,84 @@ window.M7D = {
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="stack">
-        <p class="eyebrow">Atendimento clínico via WhatsApp</p>
-        <h1>Você sabe conduzir a sessão. O que trava é a <em>conversa antes dela</em>.</h1>
-        <p class="lead muted">Uma cadência de 8 mensagens com os textos prontos, triagem estruturada e linguagem alinhada ao Código de Ética. Você acolhe desde a primeira resposta, e o valor entra na conversa no momento em que ela já faz sentido.</p>
+        <p class="eyebrow">Para psicólogas que recebem contatos pelo WhatsApp</p>
+        <h1>Transforme o “quanto custa?” do WhatsApp em <em>paciente agendada e paga</em>, com 8 mensagens prontas.</h1>
+        <p class="lead muted">Uma cadência de sete dias com os textos escritos, a conversa inicial estruturada e a linguagem alinhada ao Código de Ética. A pessoa entende o valor do processo antes de ouvir o preço, e a sua agenda ganha quem já estava chegando.</p>
 
         <div class="stack-sm">
-          <a class="btn btn-lg js-cta" data-cta="hero" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero aplicar o método hoje</a>
-          <p class="price-inline"><b>R$ 67,00 à vista</b> no Pix, ou 12x de R$ 7,14 no cartão · acesso imediato · 30 dias de garantia</p>
+          <a class="btn btn-lg js-cta" data-cta="hero" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero minhas 8 mensagens prontas</a>
+          <p class="price-inline"><b>R$ 67 no Pix</b> ou 12x de R$ 7,14 · acesso imediato · 30 dias de garantia</p>
         </div>
 
         <div class="selos">
-          <span class="selo-item"><b>7</b> materiais</span>
-          <span class="selo-item"><b>8</b> mensagens prontas</span>
-          <span class="selo-item"><b>1h</b> para aplicar</span>
+          <span class="selo-item"><b>8</b> mensagens prontas para copiar</span>
+          <span class="selo-item"><b>7</b> dias de conversa planejada</span>
+          <span class="selo-item"><b>1 paciente</b> paga o método</span>
         </div>
       </div>
 
-      <div class="stackart" aria-hidden="true">
-        <div class="pc p3"></div>
-        <div class="pc p2"></div>
-        <div class="pc p1">
-          <div class="t">Guia principal<b>7 dias</b></div>
-          <div class="b"><strong>Roteiro dia a dia<br>da primeira resposta</strong>
-            <i class="m"></i><i></i><i class="s"></i><i class="m"></i><i class="s"></i></div>
+      <div class="phone" aria-label="Exemplo de conversa que termina em sessão confirmada">
+        <span class="tag" aria-hidden="true">Dia 3</span>
+        <div class="head">
+          <div class="avatar" aria-hidden="true">CM</div>
+          <div class="who">Camila<span>online</span></div>
         </div>
-        <span class="tag">+ 6 bônus</span>
+        <div class="bubble me">Reservei para você terça às 19h, como combinamos no plano. O horário fica guardado até quinta.<time>10:12</time></div>
+        <div class="bubble them">Pode confirmar, por favor. Já te mandei o comprovante.<time>10:20</time></div>
+        <div class="bubble me">Combinado, terça às 19h. Até lá!<time>10:21</time></div>
+        <p class="ok">Sessão confirmada</p>
       </div>
-
-      <p class="small center"><a href="vsl.html" class="js-cta" data-cta="vsl">Ver a apresentação de 4 minutos</a></p>
     </div>
     <span class="hero-rule" aria-hidden="true"></span>
   </section>
 
-  <!-- PROBLEMA -->
+  <!-- A CONTA -->
+  <section>
+    <div class="wrap stack-lg">
+      <div class="stack">
+        <p class="eyebrow">A conta que ninguém faz</p>
+        <h2>Uma paciente que fica seis meses vale <em>R$ 3.600</em>.</h2>
+        <p class="muted">Pense numa sessão de R$ 150, uma vez por semana. São <span class="money-big">R$ 600</span> por mês e <span class="money-big">R$ 3.600</span> em seis meses de processo. Agora pense nas pessoas que perguntaram o valor no último mês e não voltaram. Cada uma delas era essa conta.</p>
+      </div>
+
+      <div class="card calc" id="calculadora">
+        <h3>Faça a conta com os seus números</h3>
+        <div class="fields">
+          <label class="field" for="calc-valor">
+            <span class="lbl">Valor da sessão</span>
+            <span class="box"><span class="pre" aria-hidden="true">R$</span><input type="number" id="calc-valor" inputmode="numeric" min="0" max="5000" step="10" value="150" placeholder="150"></span>
+            <span class="hint">o que você cobra hoje</span>
+          </label>
+          <label class="field" for="calc-sessoes">
+            <span class="lbl">Sessões por mês</span>
+            <span class="box"><input type="number" id="calc-sessoes" inputmode="numeric" min="0" max="31" step="1" value="4" placeholder="4"></span>
+            <span class="hint">com cada paciente</span>
+          </label>
+          <label class="field" for="calc-contatos">
+            <span class="lbl">Contatos perdidos</span>
+            <span class="box"><input type="number" id="calc-contatos" inputmode="numeric" min="0" max="200" step="1" value="3" placeholder="3"></span>
+            <span class="hint">sumiram no último mês</span>
+          </label>
+        </div>
+        <div class="result" aria-live="polite">
+          <div class="res res-loss">
+            <span class="res-lbl">Deixou de entrar em um mês</span>
+            <b id="calc-perda">R$ 1.800</b>
+            <span class="res-note" id="calc-nota">se cada pessoa ficasse só um mês</span>
+          </div>
+          <div class="res res-gain">
+            <span class="res-lbl">Investimento no método</span>
+            <b>R$ 67</b>
+            <span class="res-note" id="calc-comparacao">menos da metade de uma sessão sua</span>
+          </div>
+        </div>
+        <p class="small muted">Exemplo com os seus números. O resultado depende do volume de contatos, da sua região e do seu público.</p>
+        <a class="btn btn-block btn-lg js-cta" data-cta="calculadora" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero recuperar esses contatos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- A CENA: ANTES E DEPOIS -->
   <section class="band">
     <div class="wrap stack-lg">
       <div class="stack">
@@ -415,25 +520,50 @@ window.M7D = {
         <h2>A conversa morre sempre no <em>mesmo lugar</em>.</h2>
         <p class="muted">A pessoa chega aberta, conta um pedaço do que está sentindo e some quando o valor aparece. Quem atende sente que fez tudo certo. O que faltou foi a sequência entre o primeiro contato e o momento de decidir.</p>
       </div>
-      <div class="thread" aria-label="Exemplo de conversa que trava no preço">
-        <div class="head">
-          <div class="avatar" aria-hidden="true">PV</div>
-          <div class="who">Paciente em potencial<span>visto por último hoje</span></div>
+
+      <div class="compare">
+        <div>
+          <p class="label bad">Como costuma ser</p>
+          <div class="thread" aria-label="Exemplo de conversa que trava no preço">
+            <div class="head">
+              <div class="avatar" aria-hidden="true">PV</div>
+              <div class="who">Paciente em potencial<span>visto por último hoje</span></div>
+            </div>
+            <div class="bubble them">Oi, boa tarde. Vi seu perfil e queria saber como funciona a terapia.<time>14:02</time></div>
+            <div class="bubble me">Oi! Que bom te receber aqui. A sessão é de 50 minutos, online, uma vez por semana.<time>14:31</time></div>
+            <div class="bubble them">Entendi. E quanto custa?<time>14:33</time></div>
+            <div class="bubble me">R$ 120 a sessão.<time>14:34</time></div>
+            <p class="silence">quatro dias sem resposta</p>
+          </div>
         </div>
-        <div class="bubble them">Oi, boa tarde. Vi seu perfil e queria saber como funciona a terapia.<time>14:02</time></div>
-        <div class="bubble me">Oi! Que bom te receber aqui. A sessão é de 50 minutos, online, uma vez por semana.<time>14:31</time></div>
-        <div class="bubble them">Entendi. E quanto custa?<time>14:33</time></div>
-        <div class="bubble me">R$ 120 a sessão.<time>14:34</time></div>
-        <p class="silence">quatro dias sem resposta</p>
+        <div>
+          <p class="label good">Com a cadência</p>
+          <div class="thread" aria-label="Exemplo da mesma conversa com a cadência">
+            <div class="head">
+              <div class="avatar" aria-hidden="true">PV</div>
+              <div class="who">Paciente em potencial<span class="online">online</span></div>
+            </div>
+            <div class="bubble them">Oi, boa tarde. Vi seu perfil e queria saber como funciona a terapia.<time>14:02</time></div>
+            <div class="bubble me">Que bom que você escreveu. Sou a Ana, psicóloga, CRP 00/00000. Me conta em uma frase o que mais tem pesado pra você hoje?<time>14:02</time></div>
+            <div class="bubble them">Ansiedade. Não tô conseguindo dormir direito.<time>14:09</time></div>
+            <div class="bubble me">Obrigada por confiar isso a mim. Posso te ouvir 20 minutos amanhã, às 12h ou às 18h. Qual fica melhor?<time>16:02</time></div>
+            <div class="bubble them">18h fica ótimo.<time>16:05</time></div>
+            <p class="confirmed">conversa inicial agendada</p>
+          </div>
+        </div>
       </div>
-      <ul class="plain">
-        <li>Você responde o contato em horário de sessão, corrido, e a resposta sai curta demais para acolher.</li>
-        <li>O valor entra na conversa antes da pessoa entender o que vai receber por ele.</li>
-        <li>A pessoa diz “vou pensar” e você fica sem saber se insiste, se espera ou se desiste.</li>
-        <li>Quem agenda a primeira sessão falta, e o horário que ficou vago já tinha sido recusado para outra pessoa.</li>
-        <li>Você evita qualquer movimento que pareça venda, porque a dúvida sobre o que o CFP permite paralisa.</li>
-        <li>No fim do mês os contatos existiram, a agenda continuou com buracos e a renda ficou imprevisível.</li>
-      </ul>
+      <p class="small muted center">Mesma pessoa, mesma pergunta, mesmo valor. A diferença está na ordem da conversa.</p>
+
+      <div class="stack">
+        <h3>Os contatos chegam todo mês. A renda continua imprevisível.</h3>
+        <ul class="plain">
+          <li>Você responde o contato em horário de sessão, corrido, e a resposta sai curta demais para acolher.</li>
+          <li>O valor entra na conversa antes da pessoa entender o que vai receber por ele.</li>
+          <li>A pessoa diz “vou pensar” e você fica sem saber se insiste, se espera ou se desiste.</li>
+          <li>Quem agenda a primeira sessão falta, e o horário que ficou vago já tinha sido recusado para outra pessoa.</li>
+          <li>Você evita qualquer movimento que pareça venda, porque a dúvida sobre o que o CFP permite paralisa.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -442,24 +572,24 @@ window.M7D = {
     <div class="wrap stack-lg">
       <div class="stack">
         <p class="eyebrow">O mecanismo</p>
-        <h2>A janela de decisão de um paciente dura cerca de <em>uma semana</em>.</h2>
-        <p class="muted">Quem procura terapia costuma mandar mensagem num dia de pico emocional. Passados alguns dias, a urgência baixa, a rotina volta e a decisão fica para depois. O Método 7 Dias de Acolhimento ocupa essa janela com oito contatos planejados, cada um com uma função clara.</p>
+        <h2>Quem procura terapia decide em cerca de <em>uma semana</em>.</h2>
+        <p class="muted">A mensagem chega num dia de pico emocional. Poucos dias depois a urgência baixa, a rotina volta e a decisão fica para depois. O Método 7 Dias de Acolhimento ocupa essa semana com oito contatos planejados, e cada um tem uma função clara.</p>
       </div>
 
       <div class="cards two">
         <div class="card stack-sm">
-          <h3>Acolhimento vem antes de proposta</h3>
-          <p class="small muted">As perguntas seguem a estrutura SPIN adaptada ao contexto clínico, passando por situação, problema, implicação e benefício. A pessoa percebe o valor do processo antes de ver o preço.</p>
+          <h3>O valor chega depois do plano</h3>
+          <p class="small muted">As perguntas da conversa inicial levam a pessoa a enxergar a situação, o problema e o que muda com o processo. Ela entende o valor da terapia antes de ouvir o preço.</p>
         </div>
         <div class="card stack-sm">
           <h3>Cada mensagem tem um propósito</h3>
-          <p class="small muted">Nada é enviado por insistência. Cada toque da cadência reconhece a dor, agenda a triagem, reduz a falta, apresenta o plano, abre espaço para dúvida ou devolve autonomia à pessoa.</p>
+          <p class="small muted">Nada é enviado por insistência. Cada toque da cadência reconhece a dor, agenda a conversa inicial, reduz a falta, apresenta o plano, abre espaço para dúvida ou devolve autonomia à pessoa.</p>
         </div>
       </div>
 
       <div class="stack-sm">
         <a class="btn btn-block js-cta" data-cta="mecanismo" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero a cadência completa</a>
-        <p class="cta-note center">R$ 67,00 à vista · acesso imediato · 30 dias de garantia</p>
+        <p class="cta-note center">R$ 67 no Pix ou 12x de R$ 7,14 · acesso imediato · 30 dias de garantia</p>
       </div>
     </div>
   </section>
@@ -469,8 +599,8 @@ window.M7D = {
     <div class="wrap stack-lg">
       <div class="stack">
         <p class="eyebrow">A cadência completa</p>
-        <h2>Os <em>sete dias</em>, um por um.</h2>
-        <p class="muted">Esta é a espinha do método. Cada dia vem com o texto pronto para copiar, o intervalo recomendado e o ajuste para quando a pessoa responde antes do previsto.</p>
+        <h2>O mesmo ritual de <em>sete dias</em> para cada pessoa que chega.</h2>
+        <p class="muted">Você deixa de improvisar. Cada contato segue o mesmo caminho, e você sabe exatamente o que mandar hoje. No guia, cada dia vem com o texto pronto para copiar, o intervalo recomendado e o ajuste para quando a pessoa responde antes do previsto.</p>
       </div>
 
       <ol class="days">
@@ -479,21 +609,21 @@ window.M7D = {
           <div class="body">
             <p class="tag">Minuto zero e primeiras 2 horas</p>
             <h3>Reconhecer e nomear a dor</h3>
-            <p class="small muted">A resposta automática recebe a pessoa, mostra seu nome e CRP, e pede uma frase sobre o que mais pesa hoje. Duas horas depois sai o convite para a triagem gratuita de 20 minutos, com duas opções de horário.</p>
+            <p class="small muted">A resposta automática recebe a pessoa, mostra seu nome e CRP, e pede uma frase sobre o que mais pesa hoje. Duas horas depois sai o convite para uma conversa inicial de 20 minutos, com duas opções de horário.</p>
           </div>
         </li>
         <li class="day">
           <div class="n"><b>2</b></div>
           <div class="body">
-            <p class="tag">Triagem</p>
+            <p class="tag">Conversa inicial</p>
             <h3>Lembrete e escuta estruturada</h3>
-            <p class="small muted">Uma hora antes sai o lembrete com o link da sala, que é o que derruba a falta na triagem. A conversa de 20 minutos segue a ficha de triagem que acompanha o método.</p>
+            <p class="small muted">Uma hora antes sai o lembrete com o link da sala, que é o que derruba a falta. A conversa de 20 minutos segue a ficha de triagem que acompanha o método.</p>
           </div>
         </li>
         <li class="day">
           <div class="n cont" aria-label="ainda no dia 2"><b>·</b></div>
           <div class="body">
-            <p class="tag">Ainda no dia 2, logo após a triagem</p>
+            <p class="tag">Ainda no dia 2, logo após a conversa</p>
             <h3>Resumo do plano, ainda sem valor</h3>
             <p class="small muted">Você devolve em três linhas o objetivo principal, a frequência e as orientações práticas da primeira fase. A pessoa lê e enxerga um caminho com começo, meio e critério de progresso.</p>
           </div>
@@ -512,6 +642,14 @@ window.M7D = {
             <p class="tag">24 horas depois</p>
             <h3>Abrir espaço para a dúvida real</h3>
             <p class="small muted">Uma única mensagem pergunta se há dúvida sobre o plano ou sobre a forma de pagamento, e oferece ajuste de frequência ou de data. A objeção que estava em silêncio aparece e pode ser respondida.</p>
+          </div>
+        </li>
+        <li class="day">
+          <div class="n pause"><b>5</b></div>
+          <div class="body">
+            <p class="tag">Pausa planejada</p>
+            <h3>Um dia inteiro para a pessoa decidir</h3>
+            <p class="small muted">Nenhuma mensagem sai neste dia. A pessoa decide no tempo dela, sem pressão, e o silêncio também comunica respeito.</p>
           </div>
         </li>
         <li class="day">
@@ -539,7 +677,7 @@ window.M7D = {
     <div class="wrap stack-lg">
       <div class="stack">
         <p class="eyebrow">O que você recebe</p>
-        <h2>Um guia e <em>seis ferramentas</em> de aplicação.</h2>
+        <h2>Tudo o que vai do primeiro “oi” até a <em>primeira sessão paga</em>.</h2>
         <p class="muted">O acesso é imediato depois da compra. Tudo em PDF e planilha, pronto para editar com seu nome e seu CRP.</p>
       </div>
 
@@ -563,7 +701,7 @@ window.M7D = {
             <span class="label">Bônus 2</span>
             <div>
               <h3>Ficha de Triagem</h3>
-              <p class="small muted">O roteiro dos 20 minutos de triagem, com as perguntas na ordem que sustenta a conversa e os campos para registrar o que vira o plano inicial.</p>
+              <p class="small muted">O roteiro da conversa inicial de 20 minutos, com as perguntas na ordem que sustenta a conversa e os campos para registrar o que vira o plano inicial.</p>
             </div>
           </li>
           <li>
@@ -577,14 +715,14 @@ window.M7D = {
             <span class="label">Bônus 4</span>
             <div>
               <h3>Pacote Anti-falta</h3>
-              <p class="small muted">Os lembretes, o intervalo de envio e a política de cancelamento e reagendamento que reduzem o buraco na agenda causado por faltas de última hora.</p>
+              <p class="small muted">Os lembretes, o intervalo de envio e a política de cancelamento e reagendamento. Menos horário vago por falta de última hora.</p>
             </div>
           </li>
           <li>
             <span class="label">Bônus 5</span>
             <div>
               <h3>Planilha Funil de Pacientes</h3>
-              <p class="small muted">Planilha com as fórmulas já montadas para acompanhar resposta, triagem, proposta, conversão e falta, com as cores de status indicando onde está o gargalo do mês.</p>
+              <p class="small muted">Planilha com as fórmulas já montadas para acompanhar resposta, conversa inicial, proposta, sessão paga e falta. Você descobre em que dia a conversa trava e quanto entrou no mês.</p>
             </div>
           </li>
           <li>
@@ -597,9 +735,11 @@ window.M7D = {
         </ul>
       </div>
 
+      <p class="highlight">Com sessão de R$ 150, uma paciente que fica o primeiro mês representa <b>R$ 600</b>. O método custa <b>R$ 67</b>.</p>
+
       <div class="stack-sm">
         <a class="btn btn-block btn-lg js-cta" data-cta="kit" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero receber o kit completo</a>
-        <p class="cta-note center">Uma única paciente que fica o primeiro mês já paga o método</p>
+        <p class="cta-note center">R$ 67 no Pix ou 12x de R$ 7,14 · acesso imediato · 30 dias de garantia</p>
       </div>
     </div>
   </section>
@@ -619,10 +759,10 @@ window.M7D = {
             <tr><th scope="col">O método usa</th><th scope="col">O método evita</th></tr>
           </thead>
           <tbody>
-            <tr><td>Sessão de acolhimento gratuita de até 20 minutos como triagem</td><td>Depoimentos ou opiniões de pacientes que permitam identificação</td></tr>
+            <tr><td>Conversa inicial de 20 minutos, em particular, para entender a demanda</td><td>Depoimentos ou opiniões de pacientes que permitam identificação</td></tr>
             <tr><td>Nome, formação e número de registro visíveis no primeiro contato</td><td>Promessa de cura ou de resultado garantido</td></tr>
             <tr><td>Consentimento informado sobre o caráter profissional da conversa</td><td>Linguagem sensacionalista que cria falsa expectativa</td></tr>
-            <tr><td>Divulgação clara de valores, sem custo escondido</td><td>Registro ou compartilhamento de conversas sem autorização</td></tr>
+            <tr><td>Valores apresentados em particular, depois do plano, sem custo escondido</td><td>Registro ou compartilhamento de conversas sem autorização</td></tr>
           </tbody>
         </table>
       </div>
@@ -644,7 +784,7 @@ window.M7D = {
         </div>
         <div class="objecao">
           <p class="fala">“Sessenta e sete reais está caro pra mim agora.”</p>
-          <p>O valor equivale a uma fração de uma sessão na maior parte das tabelas de consultório. Se a cadência trouxer uma única paciente que fique o primeiro mês, o método se paga várias vezes. E você tem 30 dias para verificar isso antes de decidir ficar com ele.</p>
+          <p>Você fez a conta lá em cima. Um único contato que vira paciente devolve esse valor na primeira sessão. E você tem 30 dias para testar com contatos reais antes de decidir ficar com ele.</p>
         </div>
         <div class="objecao">
           <p class="fala">“Vou pensar e volto depois.”</p>
@@ -655,30 +795,6 @@ window.M7D = {
           <p>A leitura do guia leva cerca de uma hora. A configuração do perfil e das respostas rápidas leva mais uma. A partir daí a cadência roda em cima dos contatos que já chegam para você, sem aula, sem módulo e sem prazo.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- MÉTRICAS -->
-  <section class="band">
-    <div class="wrap stack-lg">
-      <div class="stack">
-        <p class="eyebrow">Como medir</p>
-        <h2>Você passa a enxergar <em>onde a conversa para</em>.</h2>
-        <p class="muted">A planilha do funil registra cada etapa da cadência. Os números são os seus, e o que eles mostram é em qual ponto o contato deixa de avançar.</p>
-      </div>
-      <div class="table-scroll card">
-        <table>
-          <thead><tr><th scope="col">O que a planilha registra</th><th scope="col">O que esse número revela</th></tr></thead>
-          <tbody>
-            <tr><td>Respostas ao primeiro contato</td><td>Se a sua mensagem de abertura está acolhendo ou afastando</td></tr>
-            <tr><td>Triagens realizadas</td><td>Se o convite para a conversa de 20 minutos está sendo aceito</td></tr>
-            <tr><td>Propostas enviadas</td><td>Se o plano está chegando antes do valor</td></tr>
-            <tr><td>Sessões agendadas e pagas</td><td>Em que ponto a conversa deixa de avançar</td></tr>
-            <tr><td>Faltas na primeira sessão</td><td>Se os lembretes estão saindo no intervalo certo</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="small muted">A planilha acompanha o seu próprio histórico. O método não promete percentual de conversão, porque o resultado depende do perfil do seu público, da sua região e do volume de contatos que você recebe.</p>
     </div>
   </section>
 
@@ -732,7 +848,7 @@ window.M7D = {
           <li>30 dias de garantia incondicional</li>
         </ul>
 
-        <a class="btn btn-block btn-lg js-cta" data-cta="oferta" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Garantir meu acesso agora</a>
+        <a class="btn btn-block btn-lg js-cta" data-cta="oferta" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero começar hoje por R$ 67</a>
         <p class="cta-note center">Pagamento processado pela Lastlink. Pix ou cartão.</p>
       </div>
 
@@ -801,10 +917,10 @@ window.M7D = {
   <section class="band">
     <div class="wrap stack center">
       <h2>A próxima mensagem <em>já vai chegar</em>.</h2>
-      <p class="muted">Alguém vai perguntar o valor da sua sessão esta semana. Você pode responder do jeito de sempre, ou com a cadência que leva essa conversa até a agenda.</p>
+      <p class="muted">Alguém vai perguntar o valor da sua sessão esta semana. Com a cadência, essa conversa tem um caminho até a agenda.</p>
       <div class="stack-sm">
-        <a class="btn btn-lg js-cta" data-cta="final" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Começar pelo Método 7 Dias</a>
-        <p class="price-inline">R$ 67,00 à vista · 30 dias de garantia · acesso imediato</p>
+        <a class="btn btn-lg js-cta" data-cta="final" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero minhas 8 mensagens prontas</a>
+        <p class="price-inline">R$ 67 no Pix ou 12x de R$ 7,14 · 30 dias de garantia · acesso imediato</p>
       </div>
     </div>
   </section>
@@ -821,8 +937,8 @@ window.M7D = {
 
 <div class="barra-fixa" id="barra-fixa">
   <div class="interno">
-    <div class="valor"><b>R$ 67,00</b><span>à vista ou 12x · 30 dias de garantia</span></div>
-    <a class="btn js-cta" data-cta="barra-fixa" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero começar</a>
+    <div class="valor"><b>R$ 67</b><span>no Pix ou 12x · 30 dias de garantia</span></div>
+    <a class="btn js-cta" data-cta="barra-fixa" href="https://lastlink.com/p/CAE48DDBB/checkout-payment/">Quero as 8 mensagens</a>
   </div>
 </div>
 
@@ -892,6 +1008,37 @@ window.M7D = {
       entradas.forEach(function(e){ barra.hidden = e.isIntersecting; });
     }, {threshold:0.25}).observe(oferta);
   }
+
+  /* 8. Calculadora do contato perdido */
+  var cV=document.getElementById('calc-valor'), cS=document.getElementById('calc-sessoes'), cC=document.getElementById('calc-contatos');
+  var outP=document.getElementById('calc-perda'), outC=document.getElementById('calc-comparacao'), outN=document.getElementById('calc-nota');
+  function num(el, max){ var v=parseFloat(String(el.value).replace(',','.')); if(!isFinite(v)||v<0) v=0; return Math.min(v,max); }
+  var brl;
+  try { brl = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}); } catch(e){ brl = null; }
+  function fmt(v){ return brl ? brl.format(v).replace(/\u00a0/g,' ') : 'R$ ' + Math.round(v); }
+  var usou = false;
+  function calcular(ev){
+    if(!cV||!cS||!cC||!outP||!outC) return;
+    var valor=num(cV,5000), sessoes=num(cS,31), contatos=num(cC,200);
+    var vazio = [cV,cS,cC].some(function(el){ return String(el.value).trim()===''; }) || valor<=0 || sessoes<=0;
+    if(vazio){
+      outP.textContent = 'Preencha os três campos';
+      outP.classList.add('vazio');
+      if(outN) outN.textContent = 'para ver quanto ficou fora da sua agenda';
+    } else {
+      outP.textContent = fmt(valor*sessoes*contatos);
+      outP.classList.remove('vazio');
+      if(outN) outN.textContent = contatos===1 ? 'se essa pessoa ficasse só um mês' : 'se cada pessoa ficasse só um mês';
+    }
+    var preco = CFG.PRECO;
+    if(valor <= 0) outC.textContent = 'pagamento único, com acesso vitalício';
+    else if(preco < valor/2) outC.textContent = 'menos da metade de uma sessão sua';
+    else if(preco < valor) outC.textContent = 'menos que uma sessão sua';
+    else outC.textContent = 'cerca de ' + (preco/valor).toFixed(1).replace('.',',') + ' sessões suas';
+    if(ev && !usou){ usou = true; dl.push({event:'calculadora_usada'}); }
+  }
+  [cV,cS,cC].forEach(function(el){ if(el) el.addEventListener('input', calcular); });
+  calcular();
 
   /* 7. Contagem regressiva, só aparece com DEADLINE preenchido */
   var caixa = document.getElementById('countdown');
